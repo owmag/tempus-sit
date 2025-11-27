@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempus Katoomba</title>
+    <meta name="description" content="Tempus Katoomba—modern restaurant evenings on one side, sun-lit café mornings on the other. Seasonal menus, all-Australian drinks, specialty coffee and honest food, all rooted in the Blue Mountains community.">
+    <meta property="og:title" content="Tempus Katoomba">
+    <meta property="og:description" content="Tempus Katoomba—modern restaurant evenings on one side, sun-lit café mornings on the other. Seasonal menus, all-Australian drinks, specialty coffee and honest food, all rooted in the Blue Mountains community.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tempuskatoomba.com.au/">
+    <meta property="og:image" content="https://www.tempuskatoomba.com.au/assets/images/restaurant/04.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tempus Katoomba">
+    <meta name="twitter:description" content="Tempus Katoomba—modern restaurant evenings on one side, sun-lit café mornings on the other. Seasonal menus, all-Australian drinks, specialty coffee and honest food, all rooted in the Blue Mountains community.">
+    <meta name="twitter:image" content="https://www.tempuskatoomba.com.au/assets/images/restaurant/04.webp">
+    <link rel="canonical" href="https://www.tempuskatoomba.com.au/">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicons/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/favicon-180x180.png">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Restaurant",
+          "@id": "https://www.tempuskatoomba.com.au/#restaurant",
+          "name": "Tempus Restaurant",
+          "description": "A restaurant for modern Australia; inspired by time and place. Pairing local seasonal produce with an all Australian drinks list we create meals which speak to the seasons, and to our beautiful home of the Blue Mountains. A coming together of friends to share our vision for hospitality and the joy of sharing a meal in good company.",
+          "url": "https://www.tempuskatoomba.com.au/restaurant",
+          "image": "https://www.tempuskatoomba.com.au/assets/images/restaurant/04.webp",
+          "telephone": "+61 2 4760 8630",
+          "email": "dine@tempuskatoomba.com.au",
+          "priceRange": "$$",
+          "servesCuisine": [
+            "Modern Australian"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "66 Katoomba St",
+            "addressLocality": "Katoomba",
+            "addressRegion": "NSW",
+            "postalCode": "2780",
+            "addressCountry": "AU"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "17:00",
+              "closes": "23:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "12:00",
+              "closes": "23:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday"
+              ],
+              "opens": "17:00",
+              "closes": "23:00"
+            }
+          ]
+        },
+        {
+          "@type": "CafeOrCoffeeShop",
+          "@id": "https://www.tempuskatoomba.com.au/#upearly",
+          "name": "Tempus Up Early Café",
+          "description": "At the heart of our café is a love for community, seasonality, and the Blue Mountains we call home. From our specialty coffee to our breakfast and lunch offerings, we source local, sustainable ingredients wherever possible, turning simple, honest food into moments worth savouring. We celebrate connection—slow mornings, friendly faces, and the joy of sharing a meal or a cup of coffee.",
+          "url": "https://www.tempuskatoomba.com.au/upearly",
+          "image": "https://www.tempuskatoomba.com.au/assets/images/cafe/04.webp",
+          "telephone": "+61 2 4760 8630",
+          "email": "coffee@tempuskatoomba.com.au",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "66 Katoomba St",
+            "addressLocality": "Katoomba",
+            "addressRegion": "NSW",
+            "postalCode": "2780",
+            "addressCountry": "AU"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "07:00",
+              "closes": "14:00"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'Cousine';
+            src: url('assets/fonts/Cousine/Cousine-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .split-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Disable all clicks during intro */
+        body:not(.intro-complete) .menu-rest,
+        body:not(.intro-complete) .hours-rest,
+        body:not(.intro-complete) .menu-cafe,
+        body:not(.intro-complete) .hours-cafe,
+        body:not(.intro-complete) .book-rest,
+        body:not(.intro-complete) .vouchers-rest,
+        body:not(.intro-complete) .vouchers-cafe,
+        body:not(.intro-complete) .back-cafe,
+        body:not(.intro-complete) .back-rest,
+        body:not(.intro-complete) .address,
+        body:not(.intro-complete) .left-panel,
+        body:not(.intro-complete) .right-panel {
+            pointer-events: none !important;
+        }
+
+        .left-panel,
+        .right-panel {
+            cursor: def;
+            transition: all 0.5s ease;
+        }
+
+        .resizing .left-panel,
+        .resizing .right-panel {
+            transition: none;
+        }
+
+        .left-panel {
+            width: 50%;
+            background-color: #271419;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .right-panel {
+            width: 50%;
+            background-color: #8faec3;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .left-panel > img,
+        .right-panel > img {
+            max-width: 200px;
+            max-height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            z-index: 160;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .left-panel > img {
+            filter: invert(1);
+        }
+
+        .right-panel > img {
+            transform: translateY(19%);
+        }
+
+
+        .left-panel,
+        .right-panel {
+            position: relative;
+        }
+
+        .image-cycler {
+            position: absolute;
+            top: 50%;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            z-index: 150;
+            pointer-events: none;
+            overflow: visible;
+            width: 80vw;
+            height: 79vh;
+            transition: transform 0.3s ease;
+        }
+
+        .image-cycler.finished {
+            z-index: 5;
+        }
+
+        .image-cycler img {
+            max-width: 80vw;
+            max-height: 79vh;
+            object-fit: contain;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image-cycler img.active {
+            display: block;
+        }
+
+        .image-cycler-cafe {
+            position: absolute;
+            top: 50%;
+            right: 50vw;
+            transform: translate(50%, -50%);
+            z-index: 150;
+            pointer-events: none;
+            overflow: visible;
+            width: 80vw;
+            height: 79vh;
+            transition: transform 0.3s ease;
+        }
+
+        .image-cycler-cafe.finished {
+            z-index: 5;
+        }
+
+        .image-cycler-cafe img {
+            max-width: 80vw;
+            max-height: 79vh;
+            object-fit: contain;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image-cycler-cafe img.active {
+            display: block;
+        }
+
+        .visit-text {
+            position: absolute;
+            top: 18px;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 1rem;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 1;
+            transition: opacity 0.15s ease 0.1s;
+        }
+
+        .special-event {
+            position: fixed;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 1rem;
+            pointer-events: auto;
+            z-index: 5;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            cursor: default;
+            text-align: center;
+        }
+
+        .special-event::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #feecdf;
+            transition: width 0.4s ease;
+        }
+
+        .special-event:hover::after {
+            width: 100%;
+        }
+
+        .split-container:has(.left-panel.expanded) ~ .special-event,
+        .split-container:has(.right-panel.expanded) ~ .special-event {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Apply mix-blend-mode difference to all text on restaurant side */
+        .left-panel .visit-text,
+        .left-panel .menu-rest,
+        .left-panel .book-rest,
+        .left-panel .back-rest,
+        .left-panel .hours-rest,
+        .left-panel .vouchers-rest,
+        .left-panel .hours-rest-content,
+        .split-container:has(.left-panel.expanded) ~ .address,
+        .split-container:has(.left-panel.expanded) ~ .address-content {
+            mix-blend-mode: difference;
+        }
+
+        .split-container:has(.left-panel.expanded) .visit-text,
+        .split-container:has(.right-panel.expanded) .visit-text,
+        .split-container:has(.left-panel.expanded) ~ .special-event,
+        .split-container:has(.right-panel.expanded) ~ .special-event {
+            opacity: 0;
+            transition-delay: 0s;
+        }
+
+        body:has(.left-panel.expanded) .ticker-wrapper,
+        body:has(.right-panel.expanded) .ticker-wrapper {
+            opacity: 0;
+            transition-delay: 0s;
+        }
+
+
+        .visit-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #feecdf;
+            transition: width 0.4s ease;
+        }
+
+        .left-panel .visit-text::after {
+            right: 0;
+        }
+
+        .right-panel .visit-text::after {
+            left: 0;
+        }
+
+        .left-panel:not(.expanded):hover .visit-text::after,
+        .right-panel:not(.expanded):hover .visit-text::after {
+            width: 100%;
+        }
+
+        .menu-rest,
+        .hours-rest,
+        .menu-cafe,
+        .hours-cafe,
+        .book-rest,
+        .vouchers-rest,
+        .vouchers-cafe,
+        .back-cafe,
+        .back-rest,
+        .contact-cafe {
+            position: absolute;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 1.5rem;
+            pointer-events: auto;
+            z-index: 10;
+            cursor: default;
+            display: inline-block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Hide menu, hours, address in split view */
+        .menu-rest,
+        .hours-rest,
+        .menu-cafe,
+        .hours-cafe,
+        .address {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Show when panel is expanded */
+        .left-panel.expanded .menu-rest,
+        .right-panel.expanded .menu-cafe {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .left-panel.expanded .hours-rest,
+        .right-panel.expanded .hours-cafe {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .split-container:has(.left-panel.expanded) ~ .address {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-cafe,
+        .back-rest {
+            z-index: 210;
+        }
+
+        .hours-rest,
+        .hours-cafe,
+        .contact-cafe {
+            z-index: 230;
+        }
+
+        /* Move menu and book UP when booking modal is active */
+        body.booking-active .menu-rest,
+        body.booking-active .left-panel.expanded .menu-rest,
+        body.booking-active .menu-cafe,
+        body.booking-active .right-panel.expanded .menu-cafe {
+            transform: translateY(-200%) !important;
+            opacity: 1 !important;
+        }
+
+        body.booking-active .book-rest {
+            transform: translateX(-50%) translateY(-200%) !important;
+            opacity: 1 !important;
+        }
+
+        /* Move hours, vouchers DOWN when booking modal is active */
+        body.booking-active .hours-rest,
+        body.booking-active .left-panel.expanded .hours-rest,
+        body.booking-active .hours-cafe,
+        body.booking-active .right-panel.expanded .hours-cafe,
+        body.booking-active .vouchers-rest,
+        body.booking-active .vouchers-cafe,
+        body.booking-active .contact-cafe,
+        body.booking-active .hours-rest-content,
+        body.booking-active .hours-cafe-content,
+        body.booking-active .contact-cafe-content {
+            transform: translateY(200%) !important;
+            opacity: 1 !important;
+        }
+
+        /* Keep hours and contact content visible while sliding off screen */
+        body.booking-active .hours-rest-content,
+        body.booking-active .hours-cafe-content,
+        body.booking-active .contact-cafe-content {
+            opacity: 1 !important;
+        }
+
+        /* Move address DOWN when booking modal is active */
+        body.booking-active .address,
+        body.booking-active .address-content {
+            transform: translateX(-50%) translateY(200%) !important;
+            opacity: 1 !important;
+        }
+
+        /* Hide underlines when booking modal is active */
+        body.booking-active .hours-rest::after,
+        body.booking-active .hours-cafe::after,
+        body.booking-active .contact-cafe::after,
+        body.booking-active .address .address-line::after {
+            width: 0 !important;
+        }
+
+        .menu-rest::after,
+        .hours-rest::after,
+        .menu-cafe::after,
+        .hours-cafe::after,
+        .book-rest::after,
+        .vouchers-rest::after,
+        .vouchers-cafe::after,
+        .back-cafe::after,
+        .back-rest::after,
+        .contact-cafe::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #feecdf;
+            transition: width 0.4s ease;
+        }
+
+        .menu-rest:hover::after,
+        .hours-rest:hover::after,
+        .menu-cafe:hover::after,
+        .hours-cafe:hover::after,
+        .book-rest:hover::after,
+        .vouchers-rest:hover::after,
+        .vouchers-cafe:hover::after,
+        .back-cafe:hover::after,
+        .back-rest:hover::after,
+        .contact-cafe:hover::after {
+            width: 100%;
+        }
+
+        .hours-rest.opened::after,
+        .hours-cafe.opened::after,
+        .contact-cafe.opened::after,
+        .hours-rest.closing::after,
+        .hours-cafe.closing::after,
+        .contact-cafe.closing::after {
+            width: 100%;
+        }
+
+        .menu-rest {
+            top: 10px;
+            left: 10px;
+            transform: translateY(-200%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .left-panel.expanded .menu-rest {
+            transform: translateY(0);
+        }
+
+        .book-rest {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease 0.1s, transform 0.3s ease;
+        }
+
+        .left-panel.expanded .book-rest {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-rest {
+            top: 10px;
+            right: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease 0.1s;
+        }
+
+        .left-panel.expanded .back-rest {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .vouchers-rest {
+            bottom: 10px;
+            right: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease 0.1s, transform 0.3s ease;
+            z-index: 240;
+        }
+
+        .left-panel.expanded .vouchers-rest {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .hours-rest {
+            bottom: 10px;
+            left: 10px;
+            transform: translateY(200%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .left-panel.expanded .hours-rest {
+            transform: translateY(0);
+        }
+
+        .left-panel.expanded .hours-rest.opened {
+            transform: translateY(-120px);
+        }
+
+        .hours-rest-content {
+            position: absolute;
+            bottom: -100px;
+            left: 10px;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            pointer-events: auto;
+            z-index: 240;
+            transform: translateY(30px);
+            transition: transform 0.3s ease, bottom 0.3s ease;
+            white-space: pre;
+            cursor: default;
+        }
+
+        .hours-rest.opened ~ .hours-rest-content {
+            bottom: 10px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-rest-content {
+            overscroll-behavior-x: none;
+            position: absolute;
+            top: 10vh;
+            bottom: 10vh;
+            right: -100%;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            transition: right 0.5s ease;
+            pointer-events: auto;
+            z-index: 200;
+            font-size: 0;
+            display: flex;
+            align-items: center;
+        }
+
+
+ 
+
+        .menu-rest-content img {
+            height: 100%;
+            width: auto;
+            max-width: none;
+            display: inline-block;
+            object-fit: contain;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+            flex-shrink: 0;
+        }
+
+        .menu-rest.opened ~ .menu-rest-content {
+            right: 0;
+        }
+
+        .menu-cafe {
+            top: 10px;
+            right: 10px;
+            transform: translateY(-200%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .right-panel.expanded .menu-cafe {
+            transform: translateY(0);
+        }
+
+        .menu-cafe-content {
+            position: absolute;
+            top: 10vh;
+            bottom: 10vh;
+            left: 50%;
+            transform: translateX(-200%);
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            transition: transform 0.5s ease;
+            pointer-events: auto;
+            z-index: 200;
+            scroll-behavior: smooth;
+            font-size: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-cafe-content img {
+            height: 100%;
+            width: auto;
+            max-width: none;
+            display: inline-block;
+            object-fit: contain;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+            flex-shrink: 0;
+        }
+
+        .menu-cafe.opened ~ .menu-cafe-content {
+            transform: translateX(-50%);
+        }
+
+        .hours-cafe {
+            bottom: 10px;
+            right: 10px;
+            transform: translateY(200%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .right-panel.expanded .hours-cafe {
+            transform: translateY(0);
+        }
+
+        .vouchers-cafe {
+            bottom: 10px;
+            left: 10px;
+            opacity: 0;
+            transition: opacity 0.1s ease 0.1s, transform 0.3s ease;
+            display: none !important;
+            z-index: 240;
+        }
+
+        .right-panel.expanded .vouchers-cafe {
+            opacity: 1;
+        }
+
+        .contact-cafe {
+            bottom: 10px;
+            left: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease 0.1s, transform 0.3s ease;
+        }
+
+        .right-panel.expanded .contact-cafe {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-cafe {
+            top: 10px;
+            left: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease 0.1s;
+        }
+
+        .right-panel.expanded .back-cafe {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .right-panel.expanded .hours-cafe.opened {
+            transform: translateY(-120px);
+        }
+
+        .right-panel.expanded .contact-cafe.opened {
+            transform: translateY(-120px);
+        }
+
+        .hours-cafe-content {
+            position: absolute;
+            bottom: -100px;
+            right: 10px;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            pointer-events: auto;
+            z-index: 240;
+            transform: translateY(30px);
+            transition: transform 0.3s ease, bottom 0.3s ease;
+            white-space: pre;
+            cursor: default;
+            text-align: right;
+        }
+
+        .hours-cafe.opened ~ .hours-cafe-content {
+            bottom: 10px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-cafe-content {
+            position: absolute;
+            bottom: -100px;
+            left: 10px;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            pointer-events: auto;
+            z-index: 240;
+            transform: translateY(30px);
+            transition: transform 0.3s ease, bottom 0.3s ease;
+            white-space: pre;
+            cursor: default;
+            text-align: left;
+        }
+
+        .contact-cafe.opened ~ .contact-cafe-content {
+            bottom: 10px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-phone,
+        .contact-email,
+        .contact-instagram {
+            cursor: default;
+            display: inline;
+            transition: none;
+            text-decoration: none;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-phone:hover,
+        .contact-email:hover,
+        .contact-instagram:hover {
+            color: #1f5bae;
+        }
+
+        .address {
+            font-size: 1.5rem;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #feecdf;
+            text-align: center;
+            font-family: 'Cousine', monospace;
+            pointer-events: none;
+            z-index: 210;
+            cursor: default;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .address.hidden {
+            opacity: 0 !important;
+            transition: none !important;
+        }
+
+        .address-line {
+            display: block;
+            position: relative;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .address-line:first-child {
+            margin-bottom: 0.3em;
+        }
+
+        .address-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #feecdf;
+            transition: width 0.4s ease;
+        }
+
+        .address-line:nth-child(2)::after {
+            transition: width 0.4s ease 0.25s;
+        }
+
+        .address:hover .address-line::after {
+            width: 100%;
+        }
+
+        .address:not(:hover):not(.opened):not(.closing) .address-line:first-child::after {
+            transition: width 0.4s ease 0.25s;
+        }
+
+        .address:not(:hover):not(.opened):not(.closing) .address-line:nth-child(2)::after {
+            transition: width 0.4s ease 0s;
+        }
+
+        .address.opened {
+            transform: translateX(-50%) translateY(-120px);
+        }
+
+        .address.closing {
+            transform: translateX(-50%);
+        }
+
+        .address.slide-out {
+            transform: translateX(-50%) translateY(200%);
+            opacity: 1;
+        }
+
+        .address.opened .address-line::after,
+        .address.closing .address-line::after,
+        .address.slide-out .address-line::after {
+            width: 100%;
+        }
+
+        .address.closing .address-line:first-child::after,
+        .address.slide-out .address-line:first-child::after {
+            transition: width 0.4s ease 0.25s;
+        }
+
+        .address.closing .address-line:nth-child(2)::after,
+        .address.slide-out .address-line:nth-child(2)::after {
+            transition: width 0.4s ease 0s;
+        }
+
+        .address-content {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            pointer-events: auto;
+            z-index: 210;
+            opacity: 0;
+            transition: transform 0.3s ease, bottom 0.3s ease;
+            white-space: pre;
+            cursor: default;
+            text-align: center;
+        }
+
+        .booking-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .booking-modal-content {
+            z-index: 200;
+        }
+
+        .booking-modal.active {
+            pointer-events: auto;
+        }
+
+        .booking-modal-content {
+            background-color: #ffff;
+            width: 90%;
+            max-width: 600px;
+            height: 80%;
+            max-height: 700px;
+            position: relative;
+            overflow: auto;
+            transform: translateX(-200%);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.15s ease;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+
+        .booking-modal.active .booking-modal-content {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .booking-modal.closing .booking-modal-content {
+            transform: translateX(-200%);
+        }
+
+        .booking-modal:not(.active):not(.closing) .booking-modal-content {
+            opacity: 0;
+        }
+
+        .booking-close {
+            display: none;
+        }
+
+        .booking-modal iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+            border: 0;
+            display: block;
+            pointer-events: auto;
+        }
+
+        @media only screen and (max-width: 667px) {
+            .booking-modal iframe[data-id="nbi-widget"] {
+                transition: height 0.6s ease-in-out;
+            }
+        }
+
+        .booking-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Cousine', monospace;
+            color: #333;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .booking-placeholder h3 {
+            margin: 0 0 20px 0;
+            color: #333;
+        }
+
+        .vouchers-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .vouchers-modal-content {
+            z-index: 200;
+        }
+
+        .vouchers-modal.active {
+            pointer-events: auto;
+        }
+
+        .vouchers-modal-content {
+            background-color: #ffff;
+            width: 90%;
+            max-width: 600px;
+            height: 80%;
+            max-height: 700px;
+            position: relative;
+            overflow: auto;
+            transform: translateX(200%);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.15s ease;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+
+        .vouchers-modal-content::-webkit-scrollbar {
+            display: none; /* Chrome/Safari/Opera */
+        }
+
+        .vouchers-modal.active .vouchers-modal-content {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .vouchers-modal.closing .vouchers-modal-content {
+            transform: translateX(200%);
+        }
+
+        .vouchers-modal:not(.active):not(.closing) .vouchers-modal-content {
+            opacity: 0;
+        }
+
+        .vouchers-close {
+            display: none;
+        }
+
+        .vouchers-modal iframe {
+            width: 100%;
+            border: 0;
+            display: block;
+            pointer-events: auto;
+            cursor: default;
+        }
+
+        .vouchers-iframe-custom {
+            height: 100%;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 202;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: auto;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .modal-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-overlay-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 500px;
+            width: 100%;
+            gap: 30px;
+        }
+
+        .modal-overlay-text {
+            color: #271419;
+            font-family: 'Cousine', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+            margin: 0;
+        }
+
+        .modal-next-btn {
+            background-color: #271419;
+            color: #feecdf;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Cousine', monospace;
+            font-size: 1rem;
+            cursor: default;
+        }
+
+        .vouchers-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Cousine', monospace;
+            color: #333;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .address.opened ~ .address-content {
+            bottom: 10px;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .address.closing ~ .address-content {
+            transform: translateX(-50%) translateY(200%);
+            opacity: 1;
+        }
+
+        .address.slide-out ~ .address-content {
+            transform: translateX(-50%) translateY(200%);
+            opacity: 1;
+        }
+
+
+        .address-email,
+        .address-phone,
+        .address-instagram {
+            cursor: default;
+            user-select: text;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .address-email:hover,
+        .address-phone:hover,
+        .address-instagram:hover {
+            color: #cca559;
+        }
+
+        .left-panel.expanded {
+            width: 100%;
+        }
+
+        .right-panel.expanded {
+            width: 100%;
+        }
+
+        .left-panel.collapsed,
+        .right-panel.collapsed {
+            width: 0;
+            overflow: hidden;
+        }
+
+        @media (max-width: 600px) {
+            .address .address-line {
+                display: none;
+            }
+
+            .address::before {
+                content: 'contact';
+            }
+        }
+
+        @media (max-width: 430px) {
+            /* Disable all underlines on mobile */
+            .visit-text::after,
+            .menu-rest::after,
+            .hours-rest::after,
+            .menu-cafe::after,
+            .hours-cafe::after,
+            .book-rest::after,
+            .vouchers-rest::after,
+            .vouchers-cafe::after,
+            .back-cafe::after,
+            .back-rest::after,
+            .contact-cafe::after,
+            .address-line::after {
+                display: none !important;
+            }
+
+            .split-container {
+                flex-direction: column;
+            }
+
+            .left-panel,
+            .right-panel {
+                width: 100%;
+                height: 50%;
+            }
+
+            .left-panel.expanded {
+                width: 100%;
+                height: 100%;
+            }
+
+            .right-panel.expanded {
+                width: 100%;
+                height: 100%;
+            }
+
+            .left-panel.collapsed,
+            .right-panel.collapsed {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .image-cycler,
+            .image-cycler-cafe {
+                display: none;
+            }
+
+            .left-panel > img {
+                margin-top: 30px;
+            }
+
+            .right-panel > img {
+                margin-top: -60px;
+            }
+
+            /* Make book and back animate like menu on small screens */
+            .book-rest {
+                transform: translateX(-50%) translateY(-200%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .back-rest {
+                transform: translateY(-200%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .left-panel.expanded .book-rest {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .left-panel.expanded .back-rest {
+                transform: translateY(0);
+            }
+
+            /* Delay only on initial appearance for menu-rest, book-rest, and back-rest */
+            .menu-rest {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .left-panel.expanded .menu-rest.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .left-panel.expanded .menu-rest:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .left-panel.expanded .book-rest.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .left-panel.expanded .book-rest:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .left-panel.expanded .back-rest.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .left-panel.expanded .back-rest:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Make back-cafe animate like menu-cafe on small screens */
+            .back-cafe {
+                transform: translateY(-200%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .right-panel.expanded .back-cafe {
+                transform: translateY(0);
+            }
+
+            /* Delay only on initial appearance for menu-cafe and back-cafe */
+            .menu-cafe {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .right-panel.expanded .menu-cafe.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .right-panel.expanded .menu-cafe:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .right-panel.expanded .back-cafe.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .right-panel.expanded .back-cafe:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Make vouchers and address animate like hours on small screens */
+            .vouchers-rest {
+                transform: translateY(200%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .address {
+                transform: translateX(-50%) translateY(200%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .hours-rest {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Delay only on initial appearance - use a class to track first appearance */
+            .left-panel.expanded .hours-rest {
+                transform: translateY(0);
+            }
+
+            .left-panel.expanded .hours-rest.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .left-panel.expanded .hours-rest:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .left-panel.expanded .vouchers-rest {
+                transform: translateY(0);
+            }
+
+            .left-panel.expanded .vouchers-rest.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .left-panel.expanded .vouchers-rest:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .split-container:has(.left-panel.expanded) ~ .address {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .split-container:has(.left-panel.expanded) ~ .address.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .split-container:has(.left-panel.expanded) ~ .address:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .split-container:has(.left-panel.expanded) ~ .address.opened {
+                transform: translateX(-50%) translateY(-120px);
+            }
+
+            /* Reduce all font sizes by 0.2rem on small screens */
+            .visit-text {
+                font-size: 0.8rem;
+            }
+
+            .menu-rest,
+            .hours-rest,
+            .menu-cafe,
+            .hours-cafe,
+            .book-rest,
+            .vouchers-rest,
+            .vouchers-cafe,
+            .back-cafe,
+            .back-rest,
+            .contact-cafe,
+            .address {
+                font-size: 1.3rem;
+            }
+
+            .hours-rest-content,
+            .hours-cafe-content,
+            .contact-cafe-content,
+            .address-content {
+                font-size: 0.9rem;
+            }
+
+            .address-content {
+                line-height: 1.3;
+                width: calc(100% - 40px);
+                max-width: calc(100vw - 40px);
+                left: 50%;
+                padding: 0 1px;
+                box-sizing: border-box;
+                word-wrap: break-word;
+                white-space: pre-wrap;
+            }
+
+            .address-content br {
+                display: none;
+            }
+
+            .ticker-wrapper,
+
+            /* Make contact-cafe animate like hours-cafe on small screens */
+            .contact-cafe {
+                transform: translateY(200%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .right-panel.expanded .contact-cafe {
+                transform: translateY(0);
+            }
+
+            .right-panel.expanded .contact-cafe.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .right-panel.expanded .contact-cafe:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Also add first-appear logic for hours-cafe on small screens */
+            .hours-cafe {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .right-panel.expanded .hours-cafe.first-appear {
+                transition: transform 0.3s ease 400ms, opacity 0.3s ease 400ms;
+            }
+
+            .right-panel.expanded .hours-cafe:not(.first-appear) {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Reduce gap between buttons and content on small screens */
+            .left-panel.expanded .hours-rest.opened {
+                transform: translateY(-120px);
+            }
+
+            .right-panel.expanded .hours-cafe.opened,
+            .right-panel.expanded .contact-cafe.opened {
+                transform: translateY(-120px);
+            }
+
+            .split-container:has(.left-panel.expanded) ~ .address.opened {
+                transform: translateX(-50%) translateY(-120px);
+            }
+        }
+        .main-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            transition: transform 0.6s ease;
+        }
+
+        .main-page.slide-up {
+            transform: translateY(-100%);
+        }
+
+        .secondary-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e8aba9;
+            z-index: 1;
+        }
+
+        .back-secondary {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: #f5a742;
+            font-family: 'Cousine', monospace;
+            font-size: 1.5rem;
+            z-index: 400;
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        .back-secondary:hover {
+            opacity: 1;
+        }
+
+        .special-event-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .buy-tickets {
+            position: fixed;
+            top: 51%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f5a742;
+            font-family: 'Cousine', monospace;
+            font-size: 1.5rem;
+            z-index: 10;
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        .buy-tickets:hover {
+            opacity: 1;
+        }
+
+        .tickets-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 300;
+            pointer-events: none;
+        }
+
+        .tickets-modal-content {
+            background-color: #ffff;
+            width: 90%;
+            max-width: 600px;
+            height: 80%;
+            max-height: 700px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 150%);
+            overflow: auto;
+            transition: transform 0.5s ease;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            z-index: 300;
+            pointer-events: auto;
+        }
+
+        .tickets-modal-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tickets-modal.active .tickets-modal-content {
+            transform: translate(-50%, -50%);
+        }
+
+        .tickets-modal.closing .tickets-modal-content {
+            transform: translate(-50%, 150%);
+        }
+
+        .ticker-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 0.9rem;
+            overflow: hidden;
+            z-index: 10;
+            padding: 10px 0;
+            transition: opacity 0.15s ease 0.1s;
+            pointer-events: none;
+        }
+
+        .ticker-content {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: ticker 45s linear infinite;
+        }
+
+        .ticker-text::after {
+            content: '• ';
+            padding: 0 10px;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #271419;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen"></div>
+    <div class="main-page">
+    <div class="split-container">
+        <div class="left-panel">
+            <div class="image-cycler" id="imageCycler">
+                <img src="assets/images/restaurant/01.webp" alt="Gallery 1">
+                <img src="assets/images/restaurant/02.webp" alt="Gallery 2">
+                <img src="assets/images/restaurant/03.webp" alt="Gallery 3">
+                <img src="assets/images/restaurant/04.webp" alt="Gallery 4" class="active">
+                <img src="assets/images/restaurant/05.webp" alt="Gallery 5">
+                <img src="assets/images/restaurant/06.webp" alt="Gallery 6">
+            </div>
+            <img src="assets/svg/logo-rest.svg" alt="bar&rest">
+            <div class="visit-text">visit restaurant</div>
+            <div class="menu-rest">menu</div>
+            <div class="menu-rest-content">
+                <img src="assets/menus/restaurant/rest1.webp" alt="menu 1">
+                <img src="assets/menus/restaurant/rest2.webp" alt="menu 2">
+                <img src="assets/menus/restaurant/rest3.webp" alt="menu 3">
+                <img src="assets/menus/restaurant/rest4.webp" alt="menu 4">
+                <img src="assets/menus/restaurant/rest5.webp" alt="menu 5">
+                <img src="assets/menus/restaurant/rest6.webp" alt="menu 6">
+            </div>
+            <div class="book-rest">book</div>
+            <div class="back-rest">back</div>
+            <div class="hours-rest">hours</div>
+            <div class="vouchers-rest">voucher</div>
+            <div class="hours-rest-content">Friday   5pm — late
+Saturday 12pm — late
+Sunday   12pm — late
+Monday   5pm — late</div>
+        </div>
+        <div class="right-panel">
+            <div class="image-cycler-cafe" id="imageCyclerCafe">
+                <img src="assets/images/cafe/01.webp" alt="Cafe 1">
+                <img src="assets/images/cafe/02.webp" alt="Cafe 2">
+                <img src="assets/images/cafe/03.webp" alt="Cafe 3">
+                <img src="assets/images/cafe/04.webp" alt="Cafe 4" class="active">
+                <img src="assets/images/cafe/05.webp" alt="Cafe 5">
+            </div>
+            <img src="assets/svg/logo-cafe-whitesun.svg" alt="upearly">
+            <div class="visit-text">visit cafe</div>
+            <div class="back-cafe">back</div>
+            <div class="menu-cafe">menu</div>
+            <div class="menu-cafe-content">
+                <img src="assets/menus/cafe/cafe1.webp" alt="cafe menu">
+            </div>
+            <div class="hours-cafe">hours</div>
+            <div class="vouchers-cafe">vouchers</div>
+            <div class="contact-cafe">contact</div>
+            <div class="hours-cafe-content">Monday     7am - 2pm
+Tuesday    7am - 2pm
+Wednesday  7am - 2pm
+Thursday   7am - 2pm
+Friday     7am - 2pm</div>
+            <div class="contact-cafe-content">66 Katoomba St
+Katoomba, NSW, 2780<br>
+<a class="contact-instagram" href="https://www.instagram.com/tempusupearly/" target="_blank" rel="noopener noreferrer">@tempusupearly</a>
+<a class="contact-phone" href="tel:+61247608630">(02) 4760 8630</a>
+<a class="contact-email" href="mailto:coffee@tempuskatoomba.com.au">coffee@tempuskatoomba.com.au</a>
+</div>
+        </div>
+    </div>
+
+    <div class="special-event">special event TEMPOS</div>
+
+    <div class="address">
+        <div class="address-line">66 Katoomba St</div>
+        <div class="address-line">Katoomba NSW 2780</div>
+    </div>
+
+    <div class="address-content">For all enquiries please send us an email and <br> we'll get back to you as soon as we can
+<a class="address-email" href="mailto:dine@tempuskatoomba.com.au">dine@tempuskatoomba.com.au</a>
+<a class="address-instagram" href="https://www.instagram.com/tempuskatoomba/" target="_blank" rel="noopener noreferrer">@tempuskatoomba</a>
+<a class="address-phone" href="tel:+61247608630">(02) 4760 8630</a></div>
+
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal-content">
+            <div class="modal-overlay" id="bookingOverlay">
+                <div class="modal-overlay-content">
+                    <p class="modal-overlay-text">For group bookings of 6 or more adults we require the group to dine on our shared degustation menu. We allow reservations of up to 10 people through our booking portal, for larger bookings or private functions please send an email to <a class="address-email" href="mailto:dine@tempuskatoomba.com.au">dine@tempuskatoomba.com.au</a></p>
+                    <button class="modal-next-btn" id="bookingNextBtn">NEXT</button>
+                </div>
+            </div>
+            <button class="booking-close" id="bookingClose">×</button>
+            <iframe data-id="nbi-widget" src="https://bookings.nowbookit.com?accountid=18ccf55b-4237-422b-b488-748d868382d5&venueid=7128&theme=light&colors=hex,cf6249&mobilescroll=none"></iframe>
+        </div>
+    </div>
+
+    <div class="vouchers-modal" id="vouchersModal">
+        <div class="vouchers-modal-content">
+            <div class="modal-overlay" id="vouchersOverlay">
+                <div class="modal-overlay-content">
+                    <p class="modal-overlay-text">Vouchers are valid for a period of 3 years after the date of purchase. Vouchers may be shown in a digital or printed format upon redemption and are not redeemable for cash</p>
+                    <button class="modal-next-btn" id="vouchersNextBtn">NEXT</button>
+                </div>
+            </div>
+            <button class="vouchers-close" id="vouchersClose">×</button>
+            <iframe class="vouchers-iframe-custom" src="https://giftcards.nowbookit.com/cards?accountid=18ccf55b-4237-422b-b488-748d868382d5&venueid=7128&theme=light&accent=254,86,33"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // SPECIAL EVENT TOGGLE - Change this line to enable/disable special event
+        const SPECIAL_EVENT_ENABLED = false;
+
+        // TICKER TOGGLE - Change this line to enable/disable ticker
+        const TICKER_ENABLED = true;
+        
+        // RESTAURANT ALERT TOGGLE - Change this line to enable/disable restaurant closure alert
+        const RESTAURANT_ALERT_ENABLED = true;
+        
+        // CAFE ALERT TOGGLE - Change this line to enable/disable cafe closure alert
+        const CAFE_ALERT_ENABLED = true;
+        // ============================================
+
+        // Get panel references first
+        const leftPanel = document.querySelector('.left-panel');
+        const rightPanel = document.querySelector('.right-panel');
+        const specialEvent = document.querySelector('.special-event');
+        const mainPage = document.querySelector('.main-page');
+        const secondaryPage = document.querySelector('.secondary-page');
+
+        // Enable clicking immediately (no intro animation)
+        document.body.classList.add('intro-complete');
+
+        const menuRest = document.querySelector('.menu-rest');
+        const menuCafe = document.querySelector('.menu-cafe');
+        const hoursRest = document.querySelector('.hours-rest');
+        const hoursRestContent = document.querySelector('.hours-rest-content');
+        const hoursCafe = document.querySelector('.hours-cafe');
+        const hoursCafeContent = document.querySelector('.hours-cafe-content');
+        const contactCafe = document.querySelector('.contact-cafe');
+        const contactCafeContent = document.querySelector('.contact-cafe-content');
+        const menuRestContent = document.querySelector('.menu-rest-content');
+        
+   // Vertical to horizontal scroll conversion for restaurant menu
+ let startX = 0;
+ let startY = 0;
+ let lastY = 0;
+ let scrollDirection = null;
+ let velocity = 0;
+ let lastTouchTime = 0;
+ 
+ // Mobile touch events
+ menuRestContent.addEventListener('touchstart', (e) => {
+     startX = e.touches[0].clientX;
+     startY = e.touches[0].clientY;
+     lastY = startY;
+     scrollDirection = null;
+     velocity = 0;
+     lastTouchTime = Date.now();
+ }, { passive: true });
+ 
+ menuRestContent.addEventListener('touchmove', (e) => {
+     const currentX = e.touches[0].clientX;
+     const currentY = e.touches[0].clientY;
+     const deltaX = Math.abs(currentX - startX);
+     const deltaY = Math.abs(currentY - startY);
+     
+     // Determine scroll direction on first significant movement
+     if (scrollDirection === null && (deltaX > 5 || deltaY > 5)) {
+         scrollDirection = deltaY > deltaX ? 'vertical' : 'horizontal';
+     }
+     
+     // If scrolling vertically, convert to horizontal
+     if (scrollDirection === 'vertical') {
+         const verticalDelta = lastY - currentY;
+         menuRestContent.scrollLeft += verticalDelta;
+         
+         // Track velocity between consecutive touchmove events
+         const currentTime = Date.now();
+         const timeDelta = currentTime - lastTouchTime;
+         if (timeDelta > 0) {
+             velocity = verticalDelta / timeDelta;
+         }
+         lastTouchTime = currentTime;
+         lastY = currentY;
+         
+         e.preventDefault();
+     }
+     // If horizontal, let native scroll handle it
+ }, { passive: false });
+ 
+ // On touchend, apply momentum
+ menuRestContent.addEventListener('touchend', () => {
+     if (scrollDirection === 'vertical' && Math.abs(velocity) > 0.5) {
+         let currentVelocity = velocity * 25; // Scale it (half strength)
+         
+         function applyMomentum() {
+             menuRestContent.scrollLeft += currentVelocity;
+             currentVelocity *= 0.95; // Friction/decay
+             
+             if (Math.abs(currentVelocity) > 0.5) {
+                 requestAnimationFrame(applyMomentum);
+             }
+         }
+         applyMomentum();
+     }
+     scrollDirection = null;
+ });
+ 
+ // Desktop mouse wheel
+ menuRestContent.addEventListener('wheel', (e) => {
+     // If scrolling vertically with mouse wheel, convert to horizontal
+     if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+         menuRestContent.scrollLeft += e.deltaY;
+         e.preventDefault();
+     }
+     // If scrolling horizontally (e.g., trackpad horizontal swipe), let it pass through
+ }, { passive: false });
+        const menuCafeContent = document.querySelector('.menu-cafe-content');
+        const address = document.querySelector('.address');
+        const addressContent = document.querySelector('.address-content');
+        const bookingModal = document.getElementById('bookingModal');
+        const bookingClose = document.getElementById('bookingClose');
+        const vouchersModal = document.getElementById('vouchersModal');
+        const vouchersClose = document.getElementById('vouchersClose');
+        const bookRest = document.querySelector('.book-rest');
+        const vouchersRest = document.querySelector('.vouchers-rest');
+        const vouchersCafe = document.querySelector('.vouchers-cafe');
+        const backCafe = document.querySelector('.back-cafe');
+        const backRest = document.querySelector('.back-rest');
+        let initialPathname = window.location.pathname;
+
+        // Warm-up animation behind loading screen
+        const loadingScreen = document.getElementById('loadingScreen');
+        
+        setTimeout(() => {
+            // Expand left panel (restaurant)
+            leftPanel.classList.add('expanded');
+            rightPanel.classList.add('collapsed');
+            
+            setTimeout(() => {
+                // Open menu
+                menuRest.classList.add('opened');
+                leftPanel.classList.add('menu-open');
+                
+                setTimeout(() => {
+                    // Close menu
+                    menuRest.classList.remove('opened');
+                    leftPanel.classList.remove('menu-open');
+                    
+                    // Collapse back to split
+                    leftPanel.classList.remove('expanded');
+                    rightPanel.classList.remove('collapsed');
+                    
+                    // Remove loading screen after warm-up, but keep it if we have a route to animate
+                    setTimeout(() => {
+                        // Check if we have a route that needs animation (not home page)
+                        const needsRouteAnimation = initialPathname !== '/' && initialPathname !== '/index.html';
+                        
+                        if (needsRouteAnimation) {
+                            // Keep loading screen visible, handle route animations
+                            // Wait a bit for route functions to be defined, then handle route
+                            setTimeout(() => {
+                                if (typeof handleRouteFromPath === 'function') {
+                                    handleRouteFromPath(initialPathname);
+                                    // Determine route key for animation timing
+                                    let routeKey = null;
+                                    if (initialPathname.includes('/restaurant-book')) routeKey = 'restaurantBook';
+                                    else if (initialPathname.includes('/restaurant-voucher')) routeKey = 'restaurantVoucher';
+                                    else if (initialPathname.includes('/restaurant-menu')) routeKey = 'restaurantMenu';
+                                    else if (initialPathname.includes('/restaurant-hours')) routeKey = 'restaurantHours';
+                                    else if (initialPathname.includes('/restaurant-contact')) routeKey = 'restaurantContact';
+                                    else if (initialPathname.includes('/upearly-menu')) routeKey = 'upearlyMenu';
+                                    else if (initialPathname.includes('/upearly-hours')) routeKey = 'upearlyHours';
+                                    else if (initialPathname.includes('/upearly-contact')) routeKey = 'upearlyContact';
+                                    else if (initialPathname.includes('/restaurant')) routeKey = 'restaurant';
+                                    else if (initialPathname.includes('/upearly')) routeKey = 'upearly';
+                                    
+                                    // Wait for route animations to complete before fading out
+                                    waitForRouteAnimations(routeKey, () => {
+                                        loadingScreen.classList.add('fade-out');
+                                        setTimeout(() => {
+                                            loadingScreen.remove();
+                                            isLoadingComplete = true;
+                                        }, 500);
+                                    });
+                                } else {
+                                    // Fallback if function not available yet
+                                    loadingScreen.classList.add('fade-out');
+                                    setTimeout(() => {
+                                        loadingScreen.remove();
+                                        isLoadingComplete = true;
+                                    }, 500);
+                                }
+                            }, 100);
+                        } else {
+                            // No route animation needed, fade out normally
+                            loadingScreen.classList.add('fade-out');
+                            setTimeout(() => {
+                                loadingScreen.remove();
+                                isLoadingComplete = true;
+                                if (typeof handleRouteFromPath === 'function') {
+                                    handleRouteFromPath(initialPathname);
+                                }
+                            }, 500);
+                        }
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 100);
+
+        // Image cyclers (for mouse movement cycling)
+        const imageCycler = document.getElementById('imageCycler');
+        const cyclerImages = imageCycler.querySelectorAll('img');
+        let currentImageIndex = 3; // Image 04 (index 3)
+        let isIntroComplete = true;
+
+        const imageCyclerCafe = document.getElementById('imageCyclerCafe');
+        const cyclerImagesCafe = imageCyclerCafe.querySelectorAll('img');
+        let currentImageIndexCafe = 3; // Image 04 (index 3)
+        let isIntroCompleteCafe = true;
+
+        // Mark as finished immediately
+        imageCycler.classList.add('finished');
+        imageCyclerCafe.classList.add('finished');
+
+        // Flag to track if loading is complete
+        let isLoadingComplete = false;
+
+        function cycleImages() {
+            cyclerImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % cyclerImages.length;
+            cyclerImages[currentImageIndex].classList.add('active');
+        }
+
+        function cycleImagesCafe() {
+            cyclerImagesCafe[currentImageIndexCafe].classList.remove('active');
+            currentImageIndexCafe = (currentImageIndexCafe + 1) % cyclerImagesCafe.length;
+            cyclerImagesCafe[currentImageIndexCafe].classList.add('active');
+        }
+
+        function closeWithDelay(element) {
+            if (element.classList.contains('opened')) {
+                element.classList.remove('opened');
+                element.classList.add('closing');
+                setTimeout(() => {
+                    element.classList.remove('closing');
+                }, 500);
+            }
+        }
+
+
+        const ROUTE_PATHS = {
+            home: '/',
+            restaurant: '/restaurant',
+            restaurantMenu: '/restaurant-menu',
+            restaurantHours: '/restaurant-hours',
+            restaurantContact: '/restaurant-contact',
+            restaurantBook: '/restaurant-book',
+            restaurantVoucher: '/restaurant-voucher',
+            upearly: '/upearly',
+            upearlyMenu: '/upearly-menu',
+            upearlyHours: '/upearly-hours',
+            upearlyContact: '/upearly-contact'
+        };
+
+        const META_CONTENT = {
+            home: "Tempus Katoomba—modern restaurant evenings on one side, sun-lit café mornings on the other. Seasonal menus, all-Australian drinks, specialty coffee and honest food, all rooted in the Blue Mountains community.",
+            restaurant: "A restaurant for modern Australia; inspired by time and place. Pairing local seasonal produce with an all Australian drinks list we create meals which speak to the seasons, and to our beautiful home of the Blue Mountains.",
+            restaurantMenu: "Our menu consists of a rotating selection of dishes inspired by the seasons and designed to be shared. Allow yourself to be guided by our shared degustation or feel free to pick and chose from the menu. Please note that in order to dine on our degustation menu all members of the party will need to partake. Degustation menu required for groups of 6 or more.",
+            restaurantHours: "Friday 5pm — late, Saturday 12pm — late, Sunday 12pm — late, Monday 5pm — late.",
+            restaurantContact: "For all enquiries please send us an email and we'll get back to you as soon as we can.",
+            restaurantBook: "For group bookings of 6 or more adults we require the group to dine on our shared degustation menu. We allow reservations of up to 10 people through our booking portal, for larger bookings or private functions please send an email to dine@tempuskatoomba.com.au",
+            restaurantVoucher: "Purchase Tempus restaurant gift vouchers online to share modern Australian dining rooted in the Blue Mountains.",
+            upearly: "At the heart of our café is a love for community, seasonality, and the Blue Mountains we call home. From our specialty coffee to our breakfast and lunch offerings, we source local, sustainable ingredients wherever possible, turning simple, honest food into moments worth savouring. We celebrate connection—slow mornings, friendly faces, and the joy of sharing a meal or a cup of coffee in good company.",
+            upearlyMenu: "At the heart of our café is a love for community, seasonality, and the Blue Mountains we call home. From our specialty coffee to our breakfast and lunch offerings, we source local, sustainable ingredients wherever possible, turning simple, honest food into moments worth savouring.",
+            upearlyHours: "Weekdays 7am-2pm (Kitchen open until 1:30pm).",
+            upearlyContact: "66 Katoomba St Katoomba NSW 2780, (02) 4760 8630, coffee@tempuskatoomba.com.au."
+        };
+
+        const metaDescriptionTag = document.querySelector('meta[name="description"]');
+        const metaOgDescriptionTag = document.querySelector('meta[property="og:description"]');
+        const metaTwitterDescriptionTag = document.querySelector('meta[name="twitter:description"]');
+
+        function updateMetaDescription(routeKey) {
+            const description = META_CONTENT[routeKey] || META_CONTENT.home;
+            if (metaDescriptionTag) {
+                metaDescriptionTag.setAttribute('content', description);
+            }
+            if (metaOgDescriptionTag) {
+                metaOgDescriptionTag.setAttribute('content', description);
+            }
+            if (metaTwitterDescriptionTag) {
+                metaTwitterDescriptionTag.setAttribute('content', description);
+            }
+        }
+
+        function getRouteFromPath(pathname) {
+            if (pathname === ROUTE_PATHS.restaurant) return 'restaurant';
+            if (pathname === ROUTE_PATHS.restaurantMenu) return 'restaurantMenu';
+            if (pathname === ROUTE_PATHS.restaurantHours) return 'restaurantHours';
+            if (pathname === ROUTE_PATHS.restaurantContact) return 'restaurantContact';
+            if (pathname === ROUTE_PATHS.restaurantBook) return 'restaurantBook';
+            if (pathname === ROUTE_PATHS.restaurantVoucher) return 'restaurantVoucher';
+            if (pathname === ROUTE_PATHS.upearly) return 'upearly';
+            if (pathname === ROUTE_PATHS.upearlyMenu) return 'upearlyMenu';
+            if (pathname === ROUTE_PATHS.upearlyHours) return 'upearlyHours';
+            if (pathname === ROUTE_PATHS.upearlyContact) return 'upearlyContact';
+            return null;
+        }
+
+        function navigateToRoute(route, options = {}) {
+            const { replace = false } = options;
+            const targetPath = route ? ROUTE_PATHS[route] : ROUTE_PATHS.home;
+            const state = { route: route || null };
+            if (replace) {
+                history.replaceState(state, '', targetPath);
+                updateMetaDescription(route || 'home');
+                return;
+            }
+            if (window.location.pathname === targetPath) {
+                updateMetaDescription(route || 'home');
+                return;
+            }
+            history.pushState(state, '', targetPath);
+            updateMetaDescription(route || 'home');
+        }
+
+        function openRestaurantPanel(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            const alreadyExpanded = leftPanel.classList.contains('expanded');
+            if (!force && alreadyExpanded) {
+                return;
+            }
+            address.classList.remove('hidden');
+            rightPanel.classList.remove('expanded');
+            leftPanel.classList.remove('collapsed');
+            leftPanel.classList.add('expanded');
+            rightPanel.classList.add('collapsed');
+            menuCafe.classList.remove('opened');
+
+            if (window.innerWidth <= 430) {
+                menuRest.classList.add('first-appear');
+                bookRest.classList.add('first-appear');
+                backRest.classList.add('first-appear');
+                hoursRest.classList.add('first-appear');
+                vouchersRest.classList.add('first-appear');
+                address.classList.add('first-appear');
+                setTimeout(() => {
+                    menuRest.classList.remove('first-appear');
+                    bookRest.classList.remove('first-appear');
+                    backRest.classList.remove('first-appear');
+                    hoursRest.classList.remove('first-appear');
+                    vouchersRest.classList.remove('first-appear');
+                    address.classList.remove('first-appear');
+                }, 700);
+            }
+
+            // Show restaurant closure alert after expansion
+            if (typeof RESTAURANT_ALERT_ENABLED !== 'undefined' && RESTAURANT_ALERT_ENABLED) {
+                setTimeout(() => {
+                    alert(" Tempus restaurant will be closed from the 22nd of December and reopen on the 9th of January");
+                }, 500);
+            }
+
+            if (updateHistory) {
+                navigateToRoute('restaurant');
+            }
+        }
+
+        function openRestaurantMenuSection(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            openRestaurantPanel({ updateHistory: false, force });
+            if (hoursRest.classList.contains('opened')) {
+                closeWithDelay(hoursRest);
+            }
+            if (address.classList.contains('opened')) {
+                closeWithDelay(address);
+            }
+            menuRestContent.scrollLeft = 0;
+            menuRest.classList.add('opened');
+            leftPanel.classList.add('menu-open');
+            if (updateHistory) {
+                navigateToRoute('restaurantMenu');
+            }
+        }
+
+        function openRestaurantHoursSection(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            openRestaurantPanel({ updateHistory: false, force });
+            const isSmallScreen = window.innerWidth <= 756;
+            if (isSmallScreen && address.classList.contains('opened')) {
+                closeWithDelay(address);
+            }
+            hoursRest.classList.add('opened');
+            if (updateHistory) {
+                navigateToRoute('restaurantHours');
+            }
+        }
+
+        function openRestaurantContactSection(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            openRestaurantPanel({ updateHistory: false, force });
+            const isSmallScreen = window.innerWidth <= 756;
+            if (isSmallScreen && hoursRest.classList.contains('opened')) {
+                closeWithDelay(hoursRest);
+            }
+            address.classList.add('opened');
+            address.classList.remove('hidden');
+            if (updateHistory) {
+                navigateToRoute('restaurantContact');
+            }
+        }
+
+        function openCafePanel(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            const alreadyExpanded = rightPanel.classList.contains('expanded');
+            if (!force && alreadyExpanded) {
+                return;
+            }
+            leftPanel.classList.remove('expanded');
+            rightPanel.classList.remove('collapsed');
+            rightPanel.classList.add('expanded');
+            leftPanel.classList.add('collapsed');
+            menuRest.classList.remove('opened');
+
+            if (window.innerWidth <= 430) {
+                menuCafe.classList.add('first-appear');
+                backCafe.classList.add('first-appear');
+                hoursCafe.classList.add('first-appear');
+                contactCafe.classList.add('first-appear');
+                setTimeout(() => {
+                    menuCafe.classList.remove('first-appear');
+                    backCafe.classList.remove('first-appear');
+                    hoursCafe.classList.remove('first-appear');
+                    contactCafe.classList.remove('first-appear');
+                }, 700);
+            }
+
+            // Show cafe closure alert after expansion
+            if (typeof CAFE_ALERT_ENABLED !== 'undefined' && CAFE_ALERT_ENABLED) {
+                setTimeout(() => {
+                    alert("Tempus Up Early will be closed from the 22nd of December and reopen on the 5th of January");
+                }, 500);
+            }
+
+            if (updateHistory) {
+                navigateToRoute('upearly');
+            }
+        }
+
+        function collapseToSplit(options = {}) {
+            const { updateHistory = true } = options;
+
+            if (hoursRest.classList.contains('opened')) {
+                closeWithDelay(hoursRest);
+            }
+            if (hoursCafe.classList.contains('opened')) {
+                closeWithDelay(hoursCafe);
+            }
+            if (contactCafe.classList.contains('opened')) {
+                closeWithDelay(contactCafe);
+            }
+            if (address.classList.contains('opened')) {
+                address.classList.remove('opened');
+                address.classList.add('slide-out');
+                setTimeout(() => {
+                    address.classList.add('hidden');
+                    address.classList.remove('slide-out');
+                }, 200);
+            } else {
+                address.classList.add('hidden');
+            }
+
+            menuRest.classList.remove('opened');
+            menuCafe.classList.remove('opened');
+            leftPanel.classList.remove('menu-open');
+            rightPanel.classList.remove('menu-open');
+
+            leftPanel.classList.remove('expanded', 'collapsed');
+            rightPanel.classList.remove('expanded', 'collapsed');
+
+            if (updateHistory) {
+                navigateToRoute(null);
+            }
+        }
+
+        function openCafeMenuSection(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            openCafePanel({ updateHistory: false, force });
+            if (hoursCafe.classList.contains('opened')) {
+                closeWithDelay(hoursCafe);
+            }
+            if (contactCafe.classList.contains('opened')) {
+                closeWithDelay(contactCafe);
+            }
+            menuCafeContent.scrollLeft = 0;
+            menuCafe.classList.add('opened');
+            rightPanel.classList.add('menu-open');
+            if (updateHistory) {
+                navigateToRoute('upearlyMenu');
+            }
+        }
+
+        function openCafeHoursSection(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            openCafePanel({ updateHistory: false, force });
+            const isSmallScreen = window.innerWidth <= 430;
+            if (isSmallScreen && contactCafe.classList.contains('opened')) {
+                closeWithDelay(contactCafe);
+            }
+            hoursCafe.classList.add('opened');
+            if (updateHistory) {
+                navigateToRoute('upearlyHours');
+            }
+        }
+
+        function openCafeContactSection(options = {}) {
+            const { updateHistory = true, force = false } = options;
+            openCafePanel({ updateHistory: false, force });
+            const isSmallScreen = window.innerWidth <= 430;
+            if (isSmallScreen && hoursCafe.classList.contains('opened')) {
+                closeWithDelay(hoursCafe);
+            }
+            contactCafe.classList.add('opened');
+            if (updateHistory) {
+                navigateToRoute('upearlyContact');
+            }
+        }
+
+        function waitForRouteAnimations(routeKey, callback) {
+            let totalDelay = 0;
+            
+            // Panel expansion takes 0.5s
+            totalDelay += 500;
+            
+            // Check if route needs modal
+            if (routeKey === 'restaurantBook' || routeKey === 'restaurantVoucher') {
+                // Modal opening takes 0.5s, ticker appears after 200ms
+                totalDelay += 700; // 500ms modal + 200ms ticker delay
+            } else if (routeKey === 'restaurantMenu' || routeKey === 'upearlyMenu') {
+                // Menu opening animation
+                totalDelay += 300;
+            } else if (routeKey === 'restaurantHours' || routeKey === 'upearlyHours' || 
+                       routeKey === 'restaurantContact' || routeKey === 'upearlyContact') {
+                // Hours/contact opening animation
+                totalDelay += 300;
+            }
+            
+            // Add a small buffer for smooth transition
+            totalDelay += 100;
+            
+            setTimeout(callback, totalDelay);
+        }
+
+        function handleRouteFromPath(pathname, options = {}) {
+            const { replaceHistory = false } = options;
+            const routeKey = getRouteFromPath(pathname);
+
+            const shouldOpenBooking = routeKey === 'restaurantBook';
+            const shouldOpenVoucher = routeKey === 'restaurantVoucher';
+
+            if (!shouldOpenBooking && bookingModal.classList.contains('active')) {
+                closeBookingModal({ updateHistory: false });
+            }
+
+            if (!shouldOpenVoucher && vouchersModal.classList.contains('active')) {
+                closeVouchersModal({ updateHistory: false });
+            }
+
+            if (routeKey === 'restaurant') {
+                openRestaurantPanel({ updateHistory: false, force: true });
+            } else if (routeKey === 'restaurantMenu') {
+                openRestaurantMenuSection({ updateHistory: false, force: true });
+            } else if (routeKey === 'restaurantHours') {
+                openRestaurantHoursSection({ updateHistory: false, force: true });
+            } else if (routeKey === 'restaurantContact') {
+                openRestaurantContactSection({ updateHistory: false, force: true });
+            } else if (routeKey === 'restaurantBook') {
+                openRestaurantPanel({ updateHistory: false, force: true });
+                openBookingModal({ updateHistory: false });
+            } else if (routeKey === 'restaurantVoucher') {
+                openRestaurantPanel({ updateHistory: false, force: true });
+                openVouchersModal({ updateHistory: false });
+            } else if (routeKey === 'upearly') {
+                openCafePanel({ updateHistory: false, force: true });
+            } else if (routeKey === 'upearlyMenu') {
+                openCafeMenuSection({ updateHistory: false, force: true });
+            } else if (routeKey === 'upearlyHours') {
+                openCafeHoursSection({ updateHistory: false, force: true });
+            } else if (routeKey === 'upearlyContact') {
+                openCafeContactSection({ updateHistory: false, force: true });
+            } else {
+                collapseToSplit({ updateHistory: false });
+            }
+
+            if (replaceHistory) {
+                navigateToRoute(routeKey, { replace: true });
+            } else {
+                updateMetaDescription(routeKey || 'home');
+            }
+        }
+
+        window.addEventListener('popstate', () => {
+            handleRouteFromPath(window.location.pathname);
+        });
+
+        const initialRouteKey = getRouteFromPath(initialPathname);
+        if (initialRouteKey === null && initialPathname !== ROUTE_PATHS.home) {
+            initialPathname = ROUTE_PATHS.home;
+            navigateToRoute(null, { replace: true });
+        } else {
+            navigateToRoute(initialRouteKey, { replace: true });
+        }
+        updateMetaDescription(initialRouteKey || 'home');
+
+        // Change image on mouse move (cycles through images)
+        let lastMouseX = 0;
+        let lastMouseY = 0;
+        let mouseMoveDistanceRest = 0;
+        let mouseMoveDistanceCafe = 0;
+        const moveThreshold = 300; // Pixels needed to move before changing image
+        
+        // Smooth mouse following with lerp
+        let targetXLeft = 50;
+        let targetYLeft = 50;
+        let currentXLeft = 50;
+        let currentYLeft = 50;
+        let targetXRight = 50;
+        let targetYRight = 50;
+        let currentXRight = 50;
+        let currentYRight = 50;
+        const lerpSpeed = 0.1; // Lower = smoother/slower, higher = snappier
+        
+        // Tracking delay
+        let canTrackLeft = false;
+        let canTrackRight = false;
+        const trackingDelay = 100; // milliseconds before tracking starts
+
+        
+        document.addEventListener('mousemove', (e) => {
+            // Don't cycle images while loading screen is visible
+            if (!isLoadingComplete) return;
+            
+            // Calculate distance moved
+            const deltaX = e.clientX - lastMouseX;
+            const deltaY = e.clientY - lastMouseY;
+            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            
+            // Check if mouse is inside left panel (restaurant)
+            const leftPanelRect = leftPanel.getBoundingClientRect();
+            const isInsideLeftPanel = e.clientX >= leftPanelRect.left && 
+                                      e.clientX <= leftPanelRect.right &&
+                                      e.clientY >= leftPanelRect.top && 
+                                      e.clientY <= leftPanelRect.bottom;
+            
+            // Check if mouse is inside right panel (cafe)
+            const rightPanelRect = rightPanel.getBoundingClientRect();
+            const isInsideRightPanel = e.clientX >= rightPanelRect.left && 
+                                       e.clientX <= rightPanelRect.right &&
+                                       e.clientY >= rightPanelRect.top && 
+                                       e.clientY <= rightPanelRect.bottom;
+            
+            // Handle left panel (restaurant) cycling - only if panel is expanded, menu and modals are not open
+            if (isIntroComplete && leftPanel.classList.contains('expanded') && isInsideLeftPanel && !menuRest.classList.contains('opened') && !bookingModal.classList.contains('active') && !vouchersModal.classList.contains('active')) {
+                mouseMoveDistanceRest += distance;
+                
+                if (mouseMoveDistanceRest >= moveThreshold) {
+                    cycleImages();
+                    mouseMoveDistanceRest = 0;
+                }
+            }
+            
+            // Handle right panel (cafe) cycling - only if panel is expanded, menu and modals are not open
+            if (isIntroCompleteCafe && rightPanel.classList.contains('expanded') && isInsideRightPanel && !menuCafe.classList.contains('opened') && !bookingModal.classList.contains('active') && !vouchersModal.classList.contains('active')) {
+                mouseMoveDistanceCafe += distance;
+                
+                if (mouseMoveDistanceCafe >= moveThreshold) {
+                    cycleImagesCafe();
+                    mouseMoveDistanceCafe = 0;
+                }
+            }
+            
+          
+            
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+        });
+
+        menuRest.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (menuRest.classList.contains('opened')) {
+                // Close menu only, keep panel expanded
+                menuRest.classList.remove('opened');
+                leftPanel.classList.remove('menu-open');
+                hideMenuScrollIndicator();
+                navigateToRoute('restaurant');
+            } else {
+                openRestaurantMenuSection();
+            }
+        });
+
+        menuCafe.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (menuCafe.classList.contains('opened')) {
+                // Close menu only, keep panel expanded
+                menuCafe.classList.remove('opened');
+                rightPanel.classList.remove('menu-open');
+                navigateToRoute('upearly');
+            } else {
+                openCafeMenuSection();
+            }
+        });
+
+        hoursRest.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (hoursRest.classList.contains('opened')) {
+                closeWithDelay(hoursRest);
+                navigateToRoute('restaurant');
+            } else {
+                openRestaurantHoursSection();
+            }
+        });
+
+        hoursRestContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeWithDelay(hoursRest);
+        });
+
+        hoursCafe.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (hoursCafe.classList.contains('opened')) {
+                closeWithDelay(hoursCafe);
+                navigateToRoute('upearly');
+            } else {
+                openCafeHoursSection();
+            }
+        });
+
+        hoursCafeContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeWithDelay(hoursCafe);
+        });
+
+        contactCafe.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (contactCafe.classList.contains('opened')) {
+                closeWithDelay(contactCafe);
+                navigateToRoute('upearly');
+            } else {
+                openCafeContactSection();
+            }
+        });
+
+        contactCafeContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        address.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Only allow clicking if left panel is expanded
+            if (!leftPanel.classList.contains('expanded')) {
+                return;
+            }
+            if (address.classList.contains('opened')) {
+                closeWithDelay(address);
+                navigateToRoute('restaurant');
+            } else {
+                openRestaurantContactSection();
+            }
+        });
+
+        leftPanel.addEventListener('click', () => {
+            openRestaurantPanel();
+        });
+
+        rightPanel.addEventListener('click', () => {
+            openCafePanel();
+        });
+
+        // Booking modal handlers
+        function closeBookingModal(options = {}) {
+            const { updateHistory = true } = options;
+            // Reset overlay for next time
+            const bookingOverlay = document.getElementById('bookingOverlay');
+            if (bookingOverlay) {
+                bookingOverlay.classList.remove('fade-out');
+            }
+            // Defer removing booking-active to ensure smooth transition
+            requestAnimationFrame(() => {
+                document.body.classList.remove('booking-active');
+                leftPanel.classList.remove('menu-open');
+                rightPanel.classList.remove('menu-open');
+            });
+            bookingModal.classList.add('closing');
+            setTimeout(() => {
+                bookingModal.classList.remove('active');
+                bookingModal.classList.remove('closing');
+            }, 500);
+            if (updateHistory) {
+                navigateToRoute('restaurant');
+            }
+        }
+
+        function openBookingModal(options = {}) {
+            const { updateHistory = true } = options;
+            bookingModal.classList.remove('closing');
+            bookingModal.classList.add('active');
+            // Reset overlay to show
+            const bookingOverlay = document.getElementById('bookingOverlay');
+            if (bookingOverlay) {
+                bookingOverlay.classList.remove('fade-out');
+            }
+            requestAnimationFrame(() => {
+                document.body.classList.add('booking-active');
+                leftPanel.classList.add('menu-open');
+            });
+            setTimeout(() => {
+                if (window.widgetV2 && window.widgetV2.iFrameResizer) {
+                    window.widgetV2.iFrameResizer.forceResize();
+                }
+            }, 550);
+            if (updateHistory) {
+                navigateToRoute('restaurantBook');
+            }
+        }
+
+        bookRest.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close menu if it's open
+            if (menuRest.classList.contains('opened')) {
+                menuRest.classList.remove('opened');
+            }
+            
+            // Remove opened state immediately (removes underlines, but CSS keeps opacity:1 via booking-active)
+            hoursRest.classList.remove('opened', 'closing');
+            hoursCafe.classList.remove('opened', 'closing');
+            contactCafe.classList.remove('opened', 'closing');
+            address.classList.remove('opened', 'closing');
+            
+            openBookingModal();
+        });
+
+        bookingClose.addEventListener('click', () => {
+            closeBookingModal();
+        });
+
+        // Booking overlay NEXT button
+        const bookingNextBtn = document.getElementById('bookingNextBtn');
+        if (bookingNextBtn) {
+            bookingNextBtn.addEventListener('click', () => {
+                const bookingOverlay = document.getElementById('bookingOverlay');
+                if (bookingOverlay) {
+                    bookingOverlay.classList.add('fade-out');
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+                closeBookingModal();
+            }
+        });
+
+        // Vouchers modal handlers
+        function closeVouchersModal(options = {}) {
+            const { updateHistory = true } = options;
+            // Reset overlay for next time
+            const vouchersOverlay = document.getElementById('vouchersOverlay');
+            if (vouchersOverlay) {
+                vouchersOverlay.classList.remove('fade-out');
+            }
+            // Defer removing booking-active to ensure smooth transition
+            requestAnimationFrame(() => {
+                document.body.classList.remove('booking-active');
+                leftPanel.classList.remove('menu-open');
+                rightPanel.classList.remove('menu-open');
+            });
+            vouchersModal.classList.add('closing');
+            setTimeout(() => {
+                vouchersModal.classList.remove('active');
+                vouchersModal.classList.remove('closing');
+            }, 500);
+            if (updateHistory) {
+                navigateToRoute('restaurant');
+            }
+        }
+
+        function openVouchersModal(options = {}) {
+            const { updateHistory = true } = options;
+            vouchersModal.classList.remove('closing');
+            vouchersModal.classList.add('active');
+            // Reset overlay to show
+            const vouchersOverlay = document.getElementById('vouchersOverlay');
+            if (vouchersOverlay) {
+                vouchersOverlay.classList.remove('fade-out');
+            }
+            requestAnimationFrame(() => {
+                document.body.classList.add('booking-active');
+                leftPanel.classList.add('menu-open');
+            });
+            if (updateHistory) {
+                navigateToRoute('restaurantVoucher');
+            }
+        }
+
+        vouchersRest.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close menu if it's open
+            if (menuRest.classList.contains('opened')) {
+                menuRest.classList.remove('opened');
+            }
+            
+            // Remove opened state immediately (removes underlines, but CSS keeps opacity:1 via booking-active)
+            hoursRest.classList.remove('opened', 'closing');
+            hoursCafe.classList.remove('opened', 'closing');
+            contactCafe.classList.remove('opened', 'closing');
+            address.classList.remove('opened', 'closing');
+            
+            openVouchersModal();
+        });
+
+        vouchersCafe.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close menu if it's open
+            if (menuCafe.classList.contains('opened')) {
+                menuCafe.classList.remove('opened');
+            }
+            
+            // Remove opened state immediately (removes underlines, but CSS keeps opacity:1 via booking-active)
+            hoursRest.classList.remove('opened', 'closing');
+            hoursCafe.classList.remove('opened', 'closing');
+            contactCafe.classList.remove('opened', 'closing');
+            
+            vouchersModal.classList.remove('closing');
+            vouchersModal.classList.add('active');
+            
+            // Defer adding booking-active to ensure smooth transition
+            requestAnimationFrame(() => {
+                document.body.classList.add('booking-active');
+                rightPanel.classList.add('menu-open');
+            });
+        });
+
+        vouchersClose.addEventListener('click', () => {
+            closeVouchersModal();
+        });
+
+        // Vouchers overlay NEXT button
+        const vouchersNextBtn = document.getElementById('vouchersNextBtn');
+        if (vouchersNextBtn) {
+            vouchersNextBtn.addEventListener('click', () => {
+                const vouchersOverlay = document.getElementById('vouchersOverlay');
+                if (vouchersOverlay) {
+                    vouchersOverlay.classList.add('fade-out');
+                }
+            });
+        }
+
+        // Close vouchers modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && vouchersModal.classList.contains('active')) {
+                closeVouchersModal();
+            }
+        });
+
+        // Back button to collapse right panel to split view or close menu or close modals
+        backCafe.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (bookingModal.classList.contains('active')) {
+                // If booking modal is open, close it
+                closeBookingModal();
+            } else if (vouchersModal.classList.contains('active')) {
+                // If vouchers modal is open, close it
+                closeVouchersModal();
+            } else if (menuCafe.classList.contains('opened')) {
+                // If menu is open, just close the menu
+                menuCafe.classList.remove('opened');
+                rightPanel.classList.remove('menu-open');
+                navigateToRoute('upearly');
+            } else {
+                collapseToSplit();
+            }
+        });
+
+        // Back button to collapse left panel to split view or close menu or close modals
+        backRest.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (bookingModal.classList.contains('active')) {
+                // If booking modal is open, close it
+                closeBookingModal();
+            } else if (vouchersModal.classList.contains('active')) {
+                // If vouchers modal is open, close it
+                closeVouchersModal();
+            } else if (menuRest.classList.contains('opened')) {
+                // If menu is open, just close the menu
+                menuRest.classList.remove('opened');
+                leftPanel.classList.remove('menu-open');
+                hideMenuScrollIndicator();
+                navigateToRoute('restaurant');
+            } else {
+                collapseToSplit();
+            }
+        });
+
+        // Special event module - only active if enabled
+        if (SPECIAL_EVENT_ENABLED) {
+            specialEvent.style.display = 'block';
+            specialEvent.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mainPage.classList.add('slide-up');
+            });
+        } else {
+            specialEvent.style.display = 'none';
+        }
+
+
+        // Disable transitions during window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            document.body.classList.add('resizing');
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                document.body.classList.remove('resizing');
+                
+                // Close both hours and address on small screens if both are open (left side)
+                if (window.innerWidth <= 756) {
+                    if (hoursRest.classList.contains('opened') && address.classList.contains('opened')) {
+                        closeWithDelay(hoursRest);
+                        closeWithDelay(address);
+                    }
+                    // Close both hours and contact on small screens if both are open (right side)
+                    if (hoursCafe.classList.contains('opened') && contactCafe.classList.contains('opened')) {
+                        closeWithDelay(hoursCafe);
+                        closeWithDelay(contactCafe);
+                    }
+                }
+            }, 100);
+        });
+    </script>
+    <script src="https://plugins.nowbookit.com/iframe-resizer-build/bundle.js"></script>
+    </div>
+    
+    <div class="secondary-page">
+        <video class="special-event-video" autoplay loop muted playsinline>
+            <source src="assets/events/Screen Recording 2025-11-09 at 5.25.45 am.mp4" type="video/mp4">
+        </video>
+        <div class="back-secondary">back</div>
+        <div class="buy-tickets">buy tickets</div>
+    </div>
+
+    <div class="tickets-modal" id="ticketsModal">
+        <div class="tickets-modal-content">
+            <!-- Iframe will go here later -->
+            <div style="padding: 40px; font-family: 'Cousine', monospace; text-align: center; color: #333;">
+                <h3>Tickets</h3>
+                <p>Iframe link will be added here</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticker-wrapper" id="ticker">
+        <div class="ticker-content">
+            <span class="ticker-text"></span>
+            <span class="ticker-text"></span>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // TICKER TEXT - Change this message
+        const TICKER_MESSAGE = "Please be aware we will be closed over the Christmas period • The restaurant will be closed from the 22nd of December and reopen on the 9th of January  • Tempus Up Early will  be closed from the 22nd of December and reopen on the 5th of January"
+        
+        // ============================================
+
+        // Back button handler - runs after secondary page exists
+        const backSecondaryBtn = document.querySelector('.back-secondary');
+        const mainPageDiv = document.querySelector('.main-page');
+        const buyTicketsBtn = document.querySelector('.buy-tickets');
+        const ticketsModal = document.getElementById('ticketsModal');
+        const tickerElement = document.getElementById('ticker');
+
+        // Set up ticker content with the message
+        const tickerTexts = document.querySelectorAll('.ticker-text');
+        tickerTexts.forEach(span => {
+            span.textContent = TICKER_MESSAGE;
+        });
+
+        // Ticker module - only active if enabled
+        if (tickerElement && typeof TICKER_ENABLED !== 'undefined') {
+            tickerElement.style.display = TICKER_ENABLED ? 'block' : 'none';
+        }
+
+        
+        if (backSecondaryBtn && mainPageDiv) {
+            backSecondaryBtn.onclick = function() {
+                // Close tickets modal if open
+                if (ticketsModal && ticketsModal.classList.contains('active')) {
+                    closeTicketsModal();
+                } else {
+                    mainPageDiv.classList.remove('slide-up');
+                }
+            };
+        }
+
+        // Buy tickets button handler
+        if (buyTicketsBtn && ticketsModal) {
+            buyTicketsBtn.onclick = function(e) {
+                e.stopPropagation();
+                ticketsModal.classList.remove('closing');
+                ticketsModal.classList.add('active');
+            };
+        }
+
+        // Close tickets modal function
+        function closeTicketsModal() {
+            if (ticketsModal) {
+                ticketsModal.classList.add('closing');
+                setTimeout(() => {
+                    ticketsModal.classList.remove('active');
+                    ticketsModal.classList.remove('closing');
+                }, 500);
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && ticketsModal && ticketsModal.classList.contains('active')) {
+                closeTicketsModal();
+            }
+        });
+    </script>
+</body>
+</html>
