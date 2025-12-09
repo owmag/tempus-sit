@@ -171,6 +171,7 @@
         .right-panel {
             cursor: def;
             transition: all 0.5s ease;
+            will-change: transform, opacity;
         }
 
         .resizing .left-panel,
@@ -337,6 +338,71 @@
             pointer-events: none;
         }
 
+        .closure-notice-rest,
+        .closure-notice-cafe {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 250;
+            color: #feecdf;
+            font-family: 'Cousine', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            text-align: left;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Faster fade out when panels collapse */
+        .split-container:not(:has(.left-panel.expanded)) ~ .closure-notice-rest,
+        .split-container:not(:has(.right-panel.expanded)) ~ .closure-notice-cafe {
+            transition: opacity 0.1s ease;
+        }
+
+        /* Closure notices fade in only after mouse move on desktop - handled by JS */
+        /* On mobile, show immediately when panels are expanded */
+        @media (max-width: 430px) {
+            .split-container:has(.left-panel.expanded) ~ .closure-notice-rest.enabled {
+                opacity: 1;
+            }
+
+            .split-container:has(.right-panel.expanded) ~ .closure-notice-cafe.enabled {
+                opacity: 1;
+            }
+        }
+
+        /* Hide closure notices when menus, hours, contact, or modals are open */
+        .split-container:has(.left-panel.menu-open) ~ .closure-notice-rest,
+        .split-container:has(.menu-rest.opened) ~ .closure-notice-rest,
+        .split-container:has(.hours-rest.opened) ~ .closure-notice-rest,
+        body.booking-active .closure-notice-rest,
+        body.booking-active .closure-notice-cafe {
+            opacity: 0 !important;
+        }
+
+        .split-container:has(.right-panel.menu-open) ~ .closure-notice-cafe,
+        .split-container:has(.menu-cafe.opened) ~ .closure-notice-cafe,
+        .split-container:has(.hours-cafe.opened) ~ .closure-notice-cafe,
+        .split-container:has(.contact-cafe.opened) ~ .closure-notice-cafe {
+            opacity: 0 !important;
+        }
+
+        /* Hide closure notice when address is opened - use body:has() since address comes after closure notice in DOM */
+        body:has(.address.opened) .closure-notice-rest {
+            opacity: 0 !important;
+        }
+
+        @media (max-width: 430px) {
+            .closure-notice-rest,
+            .closure-notice-cafe {
+                left: 50%;
+                top: 75%;
+                transform: translate(-50%, -50%);
+                white-space: normal;
+                text-align: center;
+                max-width: 80%;
+            }
+        }
+
         /* Apply mix-blend-mode difference to all text on restaurant side */
         .left-panel .visit-text,
         .left-panel .menu-rest,
@@ -440,6 +506,13 @@
         .back-cafe,
         .back-rest {
             z-index: 210;
+        }
+
+        /* Ensure back button is above modals and clickable */
+        body.booking-active .back-rest,
+        body.booking-active .back-cafe {
+            z-index: 250 !important;
+            pointer-events: auto !important;
         }
 
         .hours-rest,
@@ -696,6 +769,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            will-change: transform;
         }
 
         .menu-cafe-content img {
@@ -959,6 +1033,10 @@
         }
 
         .booking-modal.active {
+            pointer-events: none;
+        }
+
+        .booking-modal.active .booking-modal-content {
             pointer-events: auto;
         }
 
@@ -969,12 +1047,17 @@
             height: 80%;
             max-height: 700px;
             position: relative;
-            overflow: auto;
+            overflow: hidden; /* Disabled by default until NEXT is clicked */
             transform: translateX(-200%);
             opacity: 0;
             transition: transform 0.5s ease, opacity 0.15s ease;
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none; /* IE/Edge */
+        }
+
+        /* Enable scrolling after overlay is dismissed */
+        .booking-modal-content.scroll-enabled {
+            overflow: auto;
         }
 
         .booking-modal.active .booking-modal-content {
@@ -1045,6 +1128,10 @@
         }
 
         .vouchers-modal.active {
+            pointer-events: none;
+        }
+
+        .vouchers-modal.active .vouchers-modal-content {
             pointer-events: auto;
         }
 
@@ -1728,6 +1815,9 @@ Katoomba, NSW, 2780<br>
 
     <div class="special-event">special event TEMPOS</div>
 
+    <div class="closure-notice-rest" id="closureNoticeRest"></div>
+    <div class="closure-notice-cafe" id="closureNoticeCafe"></div>
+
     <div class="address">
         <div class="address-line">66 Katoomba St</div>
         <div class="address-line">Katoomba NSW 2780</div>
@@ -1772,11 +1862,14 @@ Katoomba, NSW, 2780<br>
         // TICKER TOGGLE - Change this line to enable/disable ticker
         const TICKER_ENABLED = true;
         
-        // RESTAURANT ALERT TOGGLE - Change this line to enable/disable restaurant closure alert
-        const RESTAURANT_ALERT_ENABLED = true;
+        // CLOSURE NOTICE TOGGLES - Change these lines to enable/disable closure notices
+        const RESTAURANT_CLOSURE_NOTICE_ENABLED = true;
+        const CAFE_CLOSURE_NOTICE_ENABLED = true;
         
-        // CAFE ALERT TOGGLE - Change this line to enable/disable cafe closure alert
-        const CAFE_ALERT_ENABLED = true;
+        // MESSAGES - Change these messages
+        const TICKER_MESSAGE = "Please be aware we will be closed over the Christmas period • The restaurant will be closed from the 22nd of December and reopen on the 9th of January  • Tempus Up Early will  be closed from the 22nd of December and reopen on the 5th of January";
+        const RESTAURANT_CLOSURE_MESSAGE = "Tempus restaurant will be closed<br>from the 22nd of December<br>and reopen on the 9th of January";
+        const CAFE_CLOSURE_MESSAGE = "Tempus Up Early will be closed<br>from the 22nd of December<br>and reopen on the 5th of January";
         // ============================================
 
         // Get panel references first
@@ -1886,6 +1979,8 @@ Katoomba, NSW, 2780<br>
         const vouchersCafe = document.querySelector('.vouchers-cafe');
         const backCafe = document.querySelector('.back-cafe');
         const backRest = document.querySelector('.back-rest');
+        const closureNoticeRest = document.getElementById('closureNoticeRest');
+        const closureNoticeCafe = document.getElementById('closureNoticeCafe');
         let initialPathname = window.location.pathname;
 
         // Warm-up animation behind loading screen
@@ -1931,6 +2026,7 @@ Katoomba, NSW, 2780<br>
                                     else if (initialPathname.includes('/upearly-menu')) routeKey = 'upearlyMenu';
                                     else if (initialPathname.includes('/upearly-hours')) routeKey = 'upearlyHours';
                                     else if (initialPathname.includes('/upearly-contact')) routeKey = 'upearlyContact';
+                                    else if (initialPathname.includes('/event')) routeKey = 'event';
                                     else if (initialPathname.includes('/restaurant')) routeKey = 'restaurant';
                                     else if (initialPathname.includes('/upearly')) routeKey = 'upearly';
                                     
@@ -2019,7 +2115,8 @@ Katoomba, NSW, 2780<br>
             upearly: '/upearly',
             upearlyMenu: '/upearly-menu',
             upearlyHours: '/upearly-hours',
-            upearlyContact: '/upearly-contact'
+            upearlyContact: '/upearly-contact',
+            event: '/event'
         };
 
         const META_CONTENT = {
@@ -2033,7 +2130,8 @@ Katoomba, NSW, 2780<br>
             upearly: "At the heart of our café is a love for community, seasonality, and the Blue Mountains we call home. From our specialty coffee to our breakfast and lunch offerings, we source local, sustainable ingredients wherever possible, turning simple, honest food into moments worth savouring. We celebrate connection—slow mornings, friendly faces, and the joy of sharing a meal or a cup of coffee in good company.",
             upearlyMenu: "At the heart of our café is a love for community, seasonality, and the Blue Mountains we call home. From our specialty coffee to our breakfast and lunch offerings, we source local, sustainable ingredients wherever possible, turning simple, honest food into moments worth savouring.",
             upearlyHours: "Weekdays 7am-2pm (Kitchen open until 1:30pm).",
-            upearlyContact: "66 Katoomba St Katoomba NSW 2780, (02) 4760 8630, coffee@tempuskatoomba.com.au."
+            upearlyContact: "66 Katoomba St Katoomba NSW 2780, (02) 4760 8630, coffee@tempuskatoomba.com.au.",
+            event: "Tempus Katoomba special events."
         };
 
         const metaDescriptionTag = document.querySelector('meta[name="description"]');
@@ -2064,6 +2162,7 @@ Katoomba, NSW, 2780<br>
             if (pathname === ROUTE_PATHS.upearlyMenu) return 'upearlyMenu';
             if (pathname === ROUTE_PATHS.upearlyHours) return 'upearlyHours';
             if (pathname === ROUTE_PATHS.upearlyContact) return 'upearlyContact';
+            if (pathname === ROUTE_PATHS.event) return 'event';
             return null;
         }
 
@@ -2096,6 +2195,12 @@ Katoomba, NSW, 2780<br>
             leftPanel.classList.add('expanded');
             rightPanel.classList.add('collapsed');
             menuCafe.classList.remove('opened');
+            
+            // Clear inline opacity on mobile so CSS can show closure notice
+            const isMobile = window.innerWidth <= 430;
+            if (isMobile && closureNoticeRest) {
+                closureNoticeRest.style.opacity = '';
+            }
 
             if (window.innerWidth <= 430) {
                 menuRest.classList.add('first-appear');
@@ -2112,13 +2217,6 @@ Katoomba, NSW, 2780<br>
                     vouchersRest.classList.remove('first-appear');
                     address.classList.remove('first-appear');
                 }, 700);
-            }
-
-            // Show restaurant closure alert after expansion
-            if (typeof RESTAURANT_ALERT_ENABLED !== 'undefined' && RESTAURANT_ALERT_ENABLED) {
-                setTimeout(() => {
-                    alert(" Tempus restaurant will be closed from the 22nd of December and reopen on the 9th of January");
-                }, 500);
             }
 
             if (updateHistory) {
@@ -2181,6 +2279,12 @@ Katoomba, NSW, 2780<br>
             rightPanel.classList.add('expanded');
             leftPanel.classList.add('collapsed');
             menuRest.classList.remove('opened');
+            
+            // Clear inline opacity on mobile so CSS can show closure notice
+            const isMobile = window.innerWidth <= 430;
+            if (isMobile && closureNoticeCafe) {
+                closureNoticeCafe.style.opacity = '';
+            }
 
             if (window.innerWidth <= 430) {
                 menuCafe.classList.add('first-appear');
@@ -2195,13 +2299,6 @@ Katoomba, NSW, 2780<br>
                 }, 700);
             }
 
-            // Show cafe closure alert after expansion
-            if (typeof CAFE_ALERT_ENABLED !== 'undefined' && CAFE_ALERT_ENABLED) {
-                setTimeout(() => {
-                    alert("Tempus Up Early will be closed from the 22nd of December and reopen on the 5th of January");
-                }, 500);
-            }
-
             if (updateHistory) {
                 navigateToRoute('upearly');
             }
@@ -2209,6 +2306,14 @@ Katoomba, NSW, 2780<br>
 
         function collapseToSplit(options = {}) {
             const { updateHistory = true } = options;
+
+            // Immediately fade out closure notices when collapsing
+            if (closureNoticeRest) {
+                closureNoticeRest.style.opacity = '0';
+            }
+            if (closureNoticeCafe) {
+                closureNoticeCafe.style.opacity = '0';
+            }
 
             if (hoursRest.classList.contains('opened')) {
                 closeWithDelay(hoursRest);
@@ -2348,6 +2453,11 @@ Katoomba, NSW, 2780<br>
                 openCafeHoursSection({ updateHistory: false, force: true });
             } else if (routeKey === 'upearlyContact') {
                 openCafeContactSection({ updateHistory: false, force: true });
+            } else if (routeKey === 'event') {
+                // Open special event page
+                if (mainPage) {
+                    mainPage.classList.add('slide-up');
+                }
             } else {
                 collapseToSplit({ updateHistory: false });
             }
@@ -2451,7 +2561,6 @@ Katoomba, NSW, 2780<br>
                 // Close menu only, keep panel expanded
                 menuRest.classList.remove('opened');
                 leftPanel.classList.remove('menu-open');
-                hideMenuScrollIndicator();
                 navigateToRoute('restaurant');
             } else {
                 openRestaurantMenuSection();
@@ -2483,6 +2592,7 @@ Katoomba, NSW, 2780<br>
         hoursRestContent.addEventListener('click', (e) => {
             e.stopPropagation();
             closeWithDelay(hoursRest);
+            navigateToRoute('restaurant');
         });
 
         hoursCafe.addEventListener('click', (e) => {
@@ -2498,6 +2608,7 @@ Katoomba, NSW, 2780<br>
         hoursCafeContent.addEventListener('click', (e) => {
             e.stopPropagation();
             closeWithDelay(hoursCafe);
+            navigateToRoute('upearly');
         });
 
         contactCafe.addEventListener('click', (e) => {
@@ -2512,6 +2623,8 @@ Katoomba, NSW, 2780<br>
 
         contactCafeContent.addEventListener('click', (e) => {
             e.stopPropagation();
+            closeWithDelay(contactCafe);
+            navigateToRoute('upearly');
         });
 
         address.addEventListener('click', (e) => {
@@ -2541,8 +2654,14 @@ Katoomba, NSW, 2780<br>
             const { updateHistory = true } = options;
             // Reset overlay for next time
             const bookingOverlay = document.getElementById('bookingOverlay');
+            const bookingModalContent = document.querySelector('.booking-modal-content');
             if (bookingOverlay) {
                 bookingOverlay.classList.remove('fade-out');
+            }
+            // Reset scrolling state for next time
+            if (bookingModalContent) {
+                bookingModalContent.classList.remove('scroll-enabled');
+                bookingModalContent.scrollTop = 0; // Reset scroll to top
             }
             // Defer removing booking-active to ensure smooth transition
             requestAnimationFrame(() => {
@@ -2554,6 +2673,14 @@ Katoomba, NSW, 2780<br>
             setTimeout(() => {
                 bookingModal.classList.remove('active');
                 bookingModal.classList.remove('closing');
+                // Ensure overlay and scroll are reset after modal fully closes
+                if (bookingOverlay) {
+                    bookingOverlay.classList.remove('fade-out');
+                }
+                if (bookingModalContent) {
+                    bookingModalContent.classList.remove('scroll-enabled');
+                    bookingModalContent.scrollTop = 0; // Reset scroll to top
+                }
             }, 500);
             if (updateHistory) {
                 navigateToRoute('restaurant');
@@ -2566,8 +2693,13 @@ Katoomba, NSW, 2780<br>
             bookingModal.classList.add('active');
             // Reset overlay to show
             const bookingOverlay = document.getElementById('bookingOverlay');
+            const bookingModalContent = document.querySelector('.booking-modal-content');
             if (bookingOverlay) {
                 bookingOverlay.classList.remove('fade-out');
+            }
+            // Disable scrolling until NEXT is clicked
+            if (bookingModalContent) {
+                bookingModalContent.classList.remove('scroll-enabled');
             }
             requestAnimationFrame(() => {
                 document.body.classList.add('booking-active');
@@ -2608,8 +2740,13 @@ Katoomba, NSW, 2780<br>
         if (bookingNextBtn) {
             bookingNextBtn.addEventListener('click', () => {
                 const bookingOverlay = document.getElementById('bookingOverlay');
+                const bookingModalContent = document.querySelector('.booking-modal-content');
                 if (bookingOverlay) {
                     bookingOverlay.classList.add('fade-out');
+                }
+                // Enable scrolling when NEXT is clicked
+                if (bookingModalContent) {
+                    bookingModalContent.classList.add('scroll-enabled');
                 }
             });
         }
@@ -2755,7 +2892,6 @@ Katoomba, NSW, 2780<br>
                 // If menu is open, just close the menu
                 menuRest.classList.remove('opened');
                 leftPanel.classList.remove('menu-open');
-                hideMenuScrollIndicator();
                 navigateToRoute('restaurant');
             } else {
                 collapseToSplit();
@@ -2767,7 +2903,8 @@ Katoomba, NSW, 2780<br>
             specialEvent.style.display = 'block';
             specialEvent.addEventListener('click', (e) => {
                 e.stopPropagation();
-                mainPage.classList.add('slide-up');
+                navigateToRoute('event');
+                handleRouteFromPath('/event');
             });
         } else {
             specialEvent.style.display = 'none';
@@ -2827,10 +2964,6 @@ Katoomba, NSW, 2780<br>
 
     <script>
         // ============================================
-        // TICKER TEXT - Change this message
-        const TICKER_MESSAGE = "Please be aware we will be closed over the Christmas period • The restaurant will be closed from the 22nd of December and reopen on the 9th of January  • Tempus Up Early will  be closed from the 22nd of December and reopen on the 5th of January"
-        
-        // ============================================
 
         // Back button handler - runs after secondary page exists
         const backSecondaryBtn = document.querySelector('.back-secondary');
@@ -2850,6 +2983,23 @@ Katoomba, NSW, 2780<br>
             tickerElement.style.display = TICKER_ENABLED ? 'block' : 'none';
         }
 
+        // Closure notices - only active if enabled
+        if (typeof RESTAURANT_CLOSURE_NOTICE_ENABLED !== 'undefined' && RESTAURANT_CLOSURE_NOTICE_ENABLED && closureNoticeRest) {
+            closureNoticeRest.classList.add('enabled');
+            // Set the message if provided
+            if (typeof RESTAURANT_CLOSURE_MESSAGE !== 'undefined') {
+                closureNoticeRest.innerHTML = RESTAURANT_CLOSURE_MESSAGE;
+            }
+        }
+        
+        if (typeof CAFE_CLOSURE_NOTICE_ENABLED !== 'undefined' && CAFE_CLOSURE_NOTICE_ENABLED && closureNoticeCafe) {
+            closureNoticeCafe.classList.add('enabled');
+            // Set the message if provided
+            if (typeof CAFE_CLOSURE_MESSAGE !== 'undefined') {
+                closureNoticeCafe.innerHTML = CAFE_CLOSURE_MESSAGE;
+            }
+        }
+
         
         if (backSecondaryBtn && mainPageDiv) {
             backSecondaryBtn.onclick = function() {
@@ -2858,6 +3008,7 @@ Katoomba, NSW, 2780<br>
                     closeTicketsModal();
                 } else {
                     mainPageDiv.classList.remove('slide-up');
+                    navigateToRoute(null); // Navigate back to home
                 }
             };
         }
@@ -2888,6 +3039,85 @@ Katoomba, NSW, 2780<br>
                 closeTicketsModal();
             }
         });
+
+        // Mouse-following closure notices (desktop only)
+        const isMobile = window.innerWidth <= 430;
+        
+        if (!isMobile) {
+            const offsetX = 20;
+            const offsetY = 20;
+            const padding = 80;
+            let hasMovedOnRest = false;
+            let hasMovedOnCafe = false;
+            
+            document.addEventListener('mousemove', function(e) {
+                // Only move if restaurant panel is expanded
+                if (leftPanel.classList.contains('expanded') && closureNoticeRest) {
+                    // Fade in on first mouse movement
+                    if (!hasMovedOnRest) {
+                        hasMovedOnRest = true;
+                        closureNoticeRest.style.opacity = '1';
+                    }
+                    
+                    const rect = closureNoticeRest.getBoundingClientRect();
+                    const windowWidth = window.innerWidth;
+                    const windowHeight = window.innerHeight;
+                    
+                    let left = e.clientX + offsetX;
+                    let top = e.clientY + offsetY;
+                    
+                    if (left + rect.width > windowWidth - padding) {
+                        left = windowWidth - rect.width - padding;
+                    }
+                    
+                    if (top + rect.height > windowHeight - padding) {
+                        top = windowHeight - rect.height - padding;
+                    }
+                    
+                    closureNoticeRest.style.left = left + 'px';
+                    closureNoticeRest.style.top = top + 'px';
+                } else if (!leftPanel.classList.contains('expanded') && closureNoticeRest) {
+                    // Reset when panel collapses - fade out quickly
+                    if (hasMovedOnRest) {
+                        closureNoticeRest.style.opacity = '0';
+                    }
+                    hasMovedOnRest = false;
+                }
+                
+                // Only move if cafe panel is expanded
+                if (rightPanel.classList.contains('expanded') && closureNoticeCafe) {
+                    // Fade in on first mouse movement
+                    if (!hasMovedOnCafe) {
+                        hasMovedOnCafe = true;
+                        closureNoticeCafe.style.opacity = '1';
+                    }
+                    
+                    const rect = closureNoticeCafe.getBoundingClientRect();
+                    const windowWidth = window.innerWidth;
+                    const windowHeight = window.innerHeight;
+                    
+                    let left = e.clientX + offsetX;
+                    let top = e.clientY + offsetY;
+                    
+                    if (left + rect.width > windowWidth - padding) {
+                        left = windowWidth - rect.width - padding;
+                    }
+                    
+                    if (top + rect.height > windowHeight - padding) {
+                        top = windowHeight - rect.height - padding;
+                    }
+                    
+                    closureNoticeCafe.style.left = left + 'px';
+                    closureNoticeCafe.style.top = top + 'px';
+                } else if (!rightPanel.classList.contains('expanded') && closureNoticeCafe) {
+                    // Reset when panel collapses - fade out quickly
+                    if (hasMovedOnCafe) {
+                        closureNoticeCafe.style.opacity = '0';
+                    }
+                    hasMovedOnCafe = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
