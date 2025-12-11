@@ -25,6 +25,28 @@
     <!-- Preload critical font -->
     <link rel="preload" href="assets/fonts/Cousine/Cousine-Regular.ttf" as="font" type="font/ttf" crossorigin>
     
+    <!-- Preload all gallery images to prevent CLS -->
+    <link rel="preload" href="assets/images/restaurant/01.webp" as="image">
+    <link rel="preload" href="assets/images/restaurant/02.webp" as="image">
+    <link rel="preload" href="assets/images/restaurant/03.webp" as="image">
+    <link rel="preload" href="assets/images/restaurant/04.webp" as="image">
+    <link rel="preload" href="assets/images/restaurant/05.webp" as="image">
+    <link rel="preload" href="assets/images/restaurant/06.webp" as="image">
+    <link rel="preload" href="assets/images/cafe/01.webp" as="image">
+    <link rel="preload" href="assets/images/cafe/02.webp" as="image">
+    <link rel="preload" href="assets/images/cafe/03.webp" as="image">
+    <link rel="preload" href="assets/images/cafe/04.webp" as="image">
+    <link rel="preload" href="assets/images/cafe/05.webp" as="image">
+    
+    <!-- Preload menu images to prevent CLS when menu opens -->
+    <link rel="preload" href="assets/menus/restaurant/rest1.webp" as="image">
+    <link rel="preload" href="assets/menus/restaurant/rest2.webp" as="image">
+    <link rel="preload" href="assets/menus/restaurant/rest3.webp" as="image">
+    <link rel="preload" href="assets/menus/restaurant/rest4.webp" as="image">
+    <link rel="preload" href="assets/menus/restaurant/rest5.webp" as="image">
+    <link rel="preload" href="assets/menus/restaurant/rest6.webp" as="image">
+    <link rel="preload" href="assets/menus/cafe/cafe1.webp" as="image">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -249,15 +271,18 @@
             max-width: 80vw;
             max-height: 79vh;
             object-fit: contain;
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            aspect-ratio: 2 / 3;
         }
 
         .image-cycler img.active {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .image-cycler-cafe {
@@ -281,15 +306,18 @@
             max-width: 80vw;
             max-height: 79vh;
             object-fit: contain;
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            aspect-ratio: 2 / 3;
         }
 
         .image-cycler-cafe img.active {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .visit-text {
@@ -1758,12 +1786,12 @@
     <div class="split-container">
         <div class="left-panel">
             <div class="image-cycler" id="imageCycler">
-                <img src="assets/images/restaurant/01.webp" alt="Gallery 1" width="1600" height="900">
-                <img src="assets/images/restaurant/02.webp" alt="Gallery 2" width="1600" height="900">
-                <img src="assets/images/restaurant/03.webp" alt="Gallery 3" width="1600" height="900">
-                <img src="assets/images/restaurant/04.webp" alt="Gallery 4" class="active" width="1600" height="900">
-                <img src="assets/images/restaurant/05.webp" alt="Gallery 5" width="1600" height="900">
-                <img src="assets/images/restaurant/06.webp" alt="Gallery 6" width="1600" height="900">
+                <img src="assets/images/restaurant/01.webp" alt="Gallery 1" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/restaurant/02.webp" alt="Gallery 2" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/restaurant/03.webp" alt="Gallery 3" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/restaurant/04.webp" alt="Gallery 4" class="active" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/restaurant/05.webp" alt="Gallery 5" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/restaurant/06.webp" alt="Gallery 6" width="1920" height="2880" loading="eager" decoding="sync">
             </div>
             <img src="assets/svg/logo-rest.svg" alt="bar&rest" width="200" height="200">
             <div class="visit-text">visit restaurant</div>
@@ -1787,11 +1815,11 @@ Monday   5pm — late</div>
         </div>
         <div class="right-panel">
             <div class="image-cycler-cafe" id="imageCyclerCafe">
-                <img src="assets/images/cafe/01.webp" alt="Cafe 1" width="1600" height="900">
-                <img src="assets/images/cafe/02.webp" alt="Cafe 2" width="1600" height="900">
-                <img src="assets/images/cafe/03.webp" alt="Cafe 3" width="1600" height="900">
-                <img src="assets/images/cafe/04.webp" alt="Cafe 4" class="active" width="1600" height="900">
-                <img src="assets/images/cafe/05.webp" alt="Cafe 5" width="1600" height="900">
+                <img src="assets/images/cafe/01.webp" alt="Cafe 1" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/cafe/02.webp" alt="Cafe 2" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/cafe/03.webp" alt="Cafe 3" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/cafe/04.webp" alt="Cafe 4" class="active" width="1920" height="2880" loading="eager" decoding="sync">
+                <img src="assets/images/cafe/05.webp" alt="Cafe 5" width="1920" height="2880" loading="eager" decoding="sync">
             </div>
             <img src="assets/svg/logo-cafe-whitesun.svg" alt="upearly" width="200" height="200">
             <div class="visit-text">visit cafe</div>
@@ -2072,26 +2100,79 @@ Katoomba, NSW, 2780<br>
         const cyclerImages = imageCycler.querySelectorAll('img');
         let currentImageIndex = 3; // Image 04 (index 3)
         let isIntroComplete = true;
+        let imagesLoadedRest = false;
 
         const imageCyclerCafe = document.getElementById('imageCyclerCafe');
         const cyclerImagesCafe = imageCyclerCafe.querySelectorAll('img');
         let currentImageIndexCafe = 3; // Image 04 (index 3)
         let isIntroCompleteCafe = true;
+        let imagesLoadedCafe = false;
 
         // Mark as finished immediately
         imageCycler.classList.add('finished');
         imageCyclerCafe.classList.add('finished');
 
-        // Flag to track if loading is complete
-        let isLoadingComplete = false;
+        // Force preload and decode ALL images before allowing cycling
+        function preloadAndDecodeImages(imageElements, callback) {
+            const imagePromises = Array.from(imageElements).map((img) => {
+                return new Promise((resolve) => {
+                    // If image already loaded and decoded, resolve immediately
+                    if (img.complete && img.naturalWidth > 0) {
+                        // Try to decode if decode() method is available
+                        if (img.decode) {
+                            img.decode().then(() => resolve()).catch(() => resolve());
+                        } else {
+                            resolve();
+                        }
+                        return;
+                    }
+                    
+                    // Wait for image to load
+                    const onLoad = () => {
+                        // Decode the image to ensure it's ready for display
+                        if (img.decode) {
+                            img.decode().then(() => resolve()).catch(() => resolve());
+                        } else {
+                            resolve();
+                        }
+                    };
+                    
+                    img.addEventListener('load', onLoad, { once: true });
+                    img.addEventListener('error', () => resolve(), { once: true });
+                    
+                    // Force load by setting src again if needed
+                    if (!img.complete) {
+                        const src = img.src;
+                        img.src = '';
+                        img.src = src;
+                    }
+                });
+            });
+            
+            Promise.all(imagePromises).then(() => {
+                callback();
+            });
+        }
+
+        // Preload restaurant images
+        preloadAndDecodeImages(cyclerImages, () => {
+            imagesLoadedRest = true;
+        });
+
+        // Preload cafe images
+        preloadAndDecodeImages(cyclerImagesCafe, () => {
+            imagesLoadedCafe = true;
+        });
 
         function cycleImages() {
+            if (!imagesLoadedRest) return; // Don't cycle if images aren't loaded
             cyclerImages[currentImageIndex].classList.remove('active');
             currentImageIndex = (currentImageIndex + 1) % cyclerImages.length;
             cyclerImages[currentImageIndex].classList.add('active');
         }
 
         function cycleImagesCafe() {
+            if (!imagesLoadedCafe) return; // Don't cycle if images aren't loaded
             cyclerImagesCafe[currentImageIndexCafe].classList.remove('active');
             currentImageIndexCafe = (currentImageIndexCafe + 1) % cyclerImagesCafe.length;
             cyclerImagesCafe[currentImageIndexCafe].classList.add('active');
