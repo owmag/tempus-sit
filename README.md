@@ -13,3 +13,8 @@ This site is deployed on Cloudflare Pages. The `_redirects` file handles SPA rou
 3. Set output directory: `/` (root)
 4. Deploy!
 
+
+
+
+
+
